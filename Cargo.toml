@@ -1,6 +1,6 @@
 [package]
 name = "unicode-blocks"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Magic Len <len@magiclen.org>"]
 edition = "2018"
 repository = "https://github.com/magiclen/unicode-blocks"
@@ -11,9 +11,5 @@ description = "This crate contains a list of all unicode blocks and provides som
 readme = "README.md"
 license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
-
-[badges.travis-ci]
-repository = "magiclen/unicode-blocks"
-branch = "master"
 
 [dependencies]

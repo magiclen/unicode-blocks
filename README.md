@@ -1,7 +1,7 @@
 Unicode Blocks
 ====================
 
-[![Build Status](https://travis-ci.org/magiclen/unicode-blocks.svg?branch=master)](https://travis-ci.org/magiclen/unicode-blocks)
+[![CI](https://github.com/magiclen/unicode-blocks/actions/workflows/ci.yml/badge.svg)](https://github.com/magiclen/unicode-blocks/actions/workflows/ci.yml)
 
 This crate contains a list of all unicode blocks and provides some functions to search across them.
 
