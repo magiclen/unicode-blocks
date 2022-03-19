@@ -1,5 +1,3 @@
-extern crate unicode_blocks;
-
 #[test]
 fn find_block() {
     assert_eq!(
