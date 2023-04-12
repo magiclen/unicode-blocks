@@ -1,5 +1,4 @@
-use crate::unicode_block::UnicodeBlock;
-use crate::unicode_blocks::*;
+use crate::{unicode_block::UnicodeBlock, unicode_blocks::*};
 
 const CJK_BLOCKS: [UnicodeBlock; 17] = [
     CJK_UNIFIED_IDEOGRAPHS,

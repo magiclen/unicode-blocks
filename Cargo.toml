@@ -3,6 +3,7 @@ name = "unicode-blocks"
 version = "0.1.5"
 authors = ["Magic Len <len@magiclen.org>"]
 edition = "2021"
+rust-version = "1.56"
 repository = "https://github.com/magiclen/unicode-blocks"
 homepage = "https://magiclen.org/unicode-blocks"
 keywords = ["unicode", "blocks", "character", "cjk"]
