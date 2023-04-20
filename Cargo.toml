@@ -9,7 +9,6 @@ homepage = "https://magiclen.org/unicode-blocks"
 keywords = ["unicode", "blocks", "character", "cjk"]
 categories = ["no-std", "text-processing"]
 description = "This crate contains a list of all unicode blocks and provides some functions to search across them."
-readme = "README.md"
 license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 
