@@ -18,11 +18,20 @@ fn find_block() {
 fn is_cjk() {
     assert!(!unicode_blocks::is_cjk('1'));
     assert!(!unicode_blocks::is_cjk('a'));
+    assert!(!unicode_blocks::is_cjk('â'));
     assert!(!unicode_blocks::is_cjk('/'));
     assert!(!unicode_blocks::is_cjk('ß'));
     assert!(unicode_blocks::is_cjk('中'));
+    assert!(unicode_blocks::is_cjk('𩸽'));
     assert!(unicode_blocks::is_cjk('。'));
     assert!(unicode_blocks::is_cjk('，'));
+    assert!(unicode_blocks::is_cjk('あ'));
+    assert!(unicode_blocks::is_cjk('ア'));
+    assert!(unicode_blocks::is_cjk('を'));
+    assert!(unicode_blocks::is_cjk('ヲ'));
+    assert!(unicode_blocks::is_cjk('ん'));
+    assert!(unicode_blocks::is_cjk('ン'));
+    assert!(unicode_blocks::is_cjk('이'));
 }
 
 #[test]
