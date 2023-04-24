@@ -1,14 +1,14 @@
 [package]
 name = "unicode-blocks"
-version = "0.1.5"
+version = "0.1.6"
 authors = ["Magic Len <len@magiclen.org>"]
 edition = "2021"
+rust-version = "1.56"
 repository = "https://github.com/magiclen/unicode-blocks"
 homepage = "https://magiclen.org/unicode-blocks"
 keywords = ["unicode", "blocks", "character", "cjk"]
 categories = ["no-std", "text-processing"]
 description = "This crate contains a list of all unicode blocks and provides some functions to search across them."
-readme = "README.md"
 license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 

@@ -45,6 +45,7 @@ mod cjk;
 mod unicode_block;
 mod unicode_blocks;
 
-pub use self::unicode_blocks::*;
 pub use cjk::*;
 pub use unicode_block::*;
+
+pub use self::unicode_blocks::*;
