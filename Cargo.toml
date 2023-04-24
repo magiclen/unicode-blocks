@@ -13,3 +13,8 @@ license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 
 [dependencies]
+
+[features]
+default = []
+# Include an array that contains references to all unicode blocks.
+all = []
