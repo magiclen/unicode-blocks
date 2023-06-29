@@ -5,6 +5,8 @@ Unicode Blocks
 
 This crate contains a list of all unicode blocks and provides some functions to search across them.
 
+Current Unicode version: 15.0.0.
+
 ## Examples
 
 #### Given a character, determine what unicode block contains it.

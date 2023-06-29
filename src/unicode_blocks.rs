@@ -2,6 +2,8 @@
 
 use crate::UnicodeBlock;
 
+pub const VERSION: &str = "15.0.0";
+
 pub const BASIC_LATIN: UnicodeBlock = UnicodeBlock {
     name: "Basic Latin", start: 0, end: 127
 };
