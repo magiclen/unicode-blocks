@@ -47,7 +47,7 @@ impl PartialEq for UnicodeBlock {
 impl PartialOrd for UnicodeBlock {
     #[inline]
     fn partial_cmp(&self, other: &UnicodeBlock) -> Option<Ordering> {
-        self.start.partial_cmp(&other.start)
+        Some(self.cmp(other))
     }
 }
 
