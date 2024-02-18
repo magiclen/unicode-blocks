@@ -2,8 +2,7 @@
 
 use crate::UnicodeBlock;
 
-pub const VERSION: &str = "15.0.0";
-
+pub const VERSION: &str = "15.1.0";
 pub const BASIC_LATIN: UnicodeBlock = UnicodeBlock {
     name: "Basic Latin", start: 0, end: 127
 };
@@ -1173,6 +1172,10 @@ pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F: UnicodeBlock =
     UnicodeBlock {
         name: "CJK Unified Ideographs Extension F", start: 183984, end: 191471
     };
+pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I: UnicodeBlock =
+    UnicodeBlock {
+        name: "CJK Unified Ideographs Extension I", start: 191472, end: 192095
+    };
 pub const CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
         name: "CJK Compatibility Ideographs Supplement", start: 194560, end: 195103
@@ -1521,6 +1524,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{02B740}'..='\u{02B81F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D),
         '\u{02B820}'..='\u{02CEAF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E),
         '\u{02CEB0}'..='\u{02EBEF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F),
+        '\u{02EBF0}'..='\u{02EE5F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I),
         '\u{02F800}'..='\u{02FA1F}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT),
         '\u{030000}'..='\u{03134F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G),
         '\u{031350}'..='\u{0323AF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H),
