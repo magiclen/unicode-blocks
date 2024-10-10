@@ -2,1535 +2,1601 @@
 
 use crate::UnicodeBlock;
 
-pub const VERSION: &str = "15.1.0";
-pub const BASIC_LATIN: UnicodeBlock = UnicodeBlock {
-    name: "Basic Latin", start: 0, end: 127
-};
+pub const VERSION: &str = "16.0.0";
+pub const BASIC_LATIN: UnicodeBlock =
+    UnicodeBlock {
+        name: "Basic Latin", start: 0x0000, end: 0x007F
+    };
 pub const LATIN_1_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin-1 Supplement", start: 128, end: 255
+        name: "Latin-1 Supplement", start: 0x0080, end: 0x00FF
     };
 pub const LATIN_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-A", start: 256, end: 383
+        name: "Latin Extended-A", start: 0x0100, end: 0x017F
     };
 pub const LATIN_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-B", start: 384, end: 591
+        name: "Latin Extended-B", start: 0x0180, end: 0x024F
     };
 pub const IPA_EXTENSIONS: UnicodeBlock =
     UnicodeBlock {
-        name: "IPA Extensions", start: 592, end: 687
+        name: "IPA Extensions", start: 0x0250, end: 0x02AF
     };
 pub const SPACING_MODIFIER_LETTERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Spacing Modifier Letters", start: 688, end: 767
+        name: "Spacing Modifier Letters", start: 0x02B0, end: 0x02FF
     };
 pub const COMBINING_DIACRITICAL_MARKS: UnicodeBlock =
     UnicodeBlock {
-        name: "Combining Diacritical Marks", start: 768, end: 879
+        name: "Combining Diacritical Marks", start: 0x0300, end: 0x036F
     };
 pub const GREEK_AND_COPTIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Greek and Coptic", start: 880, end: 1023
+        name: "Greek and Coptic", start: 0x0370, end: 0x03FF
     };
 pub const CYRILLIC: UnicodeBlock = UnicodeBlock {
-    name: "Cyrillic", start: 1024, end: 1279
+    name: "Cyrillic", start: 0x0400, end: 0x04FF
 };
 pub const CYRILLIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Cyrillic Supplement", start: 1280, end: 1327
+        name: "Cyrillic Supplement", start: 0x0500, end: 0x052F
     };
 pub const ARMENIAN: UnicodeBlock = UnicodeBlock {
-    name: "Armenian", start: 1328, end: 1423
+    name: "Armenian", start: 0x0530, end: 0x058F
 };
 pub const HEBREW: UnicodeBlock = UnicodeBlock {
-    name: "Hebrew", start: 1424, end: 1535
+    name: "Hebrew", start: 0x0590, end: 0x05FF
 };
 pub const ARABIC: UnicodeBlock = UnicodeBlock {
-    name: "Arabic", start: 1536, end: 1791
+    name: "Arabic", start: 0x0600, end: 0x06FF
 };
 pub const SYRIAC: UnicodeBlock = UnicodeBlock {
-    name: "Syriac", start: 1792, end: 1871
+    name: "Syriac", start: 0x0700, end: 0x074F
 };
 pub const ARABIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Supplement", start: 1872, end: 1919
+        name: "Arabic Supplement", start: 0x0750, end: 0x077F
     };
 pub const THAANA: UnicodeBlock = UnicodeBlock {
-    name: "Thaana", start: 1920, end: 1983
+    name: "Thaana", start: 0x0780, end: 0x07BF
 };
 pub const NKO: UnicodeBlock = UnicodeBlock {
-    name: "NKo", start: 1984, end: 2047
+    name: "NKo", start: 0x07C0, end: 0x07FF
 };
-pub const SAMARITAN: UnicodeBlock = UnicodeBlock {
-    name: "Samaritan", start: 2048, end: 2111
-};
+pub const SAMARITAN: UnicodeBlock =
+    UnicodeBlock {
+        name: "Samaritan", start: 0x0800, end: 0x083F
+    };
 pub const MANDAIC: UnicodeBlock = UnicodeBlock {
-    name: "Mandaic", start: 2112, end: 2143
+    name: "Mandaic", start: 0x0840, end: 0x085F
 };
 pub const SYRIAC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Syriac Supplement", start: 2144, end: 2159
+        name: "Syriac Supplement", start: 0x0860, end: 0x086F
     };
 pub const ARABIC_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Extended-B", start: 2160, end: 2207
+        name: "Arabic Extended-B", start: 0x0870, end: 0x089F
     };
 pub const ARABIC_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Extended-A", start: 2208, end: 2303
+        name: "Arabic Extended-A", start: 0x08A0, end: 0x08FF
     };
-pub const DEVANAGARI: UnicodeBlock = UnicodeBlock {
-    name: "Devanagari", start: 2304, end: 2431
-};
+pub const DEVANAGARI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Devanagari", start: 0x0900, end: 0x097F
+    };
 pub const BENGALI: UnicodeBlock = UnicodeBlock {
-    name: "Bengali", start: 2432, end: 2559
+    name: "Bengali", start: 0x0980, end: 0x09FF
 };
 pub const GURMUKHI: UnicodeBlock = UnicodeBlock {
-    name: "Gurmukhi", start: 2560, end: 2687
+    name: "Gurmukhi", start: 0x0A00, end: 0x0A7F
 };
 pub const GUJARATI: UnicodeBlock = UnicodeBlock {
-    name: "Gujarati", start: 2688, end: 2815
+    name: "Gujarati", start: 0x0A80, end: 0x0AFF
 };
 pub const ORIYA: UnicodeBlock = UnicodeBlock {
-    name: "Oriya", start: 2816, end: 2943
+    name: "Oriya", start: 0x0B00, end: 0x0B7F
 };
 pub const TAMIL: UnicodeBlock = UnicodeBlock {
-    name: "Tamil", start: 2944, end: 3071
+    name: "Tamil", start: 0x0B80, end: 0x0BFF
 };
 pub const TELUGU: UnicodeBlock = UnicodeBlock {
-    name: "Telugu", start: 3072, end: 3199
+    name: "Telugu", start: 0x0C00, end: 0x0C7F
 };
 pub const KANNADA: UnicodeBlock = UnicodeBlock {
-    name: "Kannada", start: 3200, end: 3327
+    name: "Kannada", start: 0x0C80, end: 0x0CFF
 };
-pub const MALAYALAM: UnicodeBlock = UnicodeBlock {
-    name: "Malayalam", start: 3328, end: 3455
-};
+pub const MALAYALAM: UnicodeBlock =
+    UnicodeBlock {
+        name: "Malayalam", start: 0x0D00, end: 0x0D7F
+    };
 pub const SINHALA: UnicodeBlock = UnicodeBlock {
-    name: "Sinhala", start: 3456, end: 3583
+    name: "Sinhala", start: 0x0D80, end: 0x0DFF
 };
 pub const THAI: UnicodeBlock = UnicodeBlock {
-    name: "Thai", start: 3584, end: 3711
+    name: "Thai", start: 0x0E00, end: 0x0E7F
 };
 pub const LAO: UnicodeBlock = UnicodeBlock {
-    name: "Lao", start: 3712, end: 3839
+    name: "Lao", start: 0x0E80, end: 0x0EFF
 };
 pub const TIBETAN: UnicodeBlock = UnicodeBlock {
-    name: "Tibetan", start: 3840, end: 4095
+    name: "Tibetan", start: 0x0F00, end: 0x0FFF
 };
 pub const MYANMAR: UnicodeBlock = UnicodeBlock {
-    name: "Myanmar", start: 4096, end: 4255
+    name: "Myanmar", start: 0x1000, end: 0x109F
 };
 pub const GEORGIAN: UnicodeBlock = UnicodeBlock {
-    name: "Georgian", start: 4256, end: 4351
+    name: "Georgian", start: 0x10A0, end: 0x10FF
 };
 pub const HANGUL_JAMO: UnicodeBlock =
     UnicodeBlock {
-        name: "Hangul Jamo", start: 4352, end: 4607
+        name: "Hangul Jamo", start: 0x1100, end: 0x11FF
     };
 pub const ETHIOPIC: UnicodeBlock = UnicodeBlock {
-    name: "Ethiopic", start: 4608, end: 4991
+    name: "Ethiopic", start: 0x1200, end: 0x137F
 };
 pub const ETHIOPIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Ethiopic Supplement", start: 4992, end: 5023
+        name: "Ethiopic Supplement", start: 0x1380, end: 0x139F
     };
 pub const CHEROKEE: UnicodeBlock = UnicodeBlock {
-    name: "Cherokee", start: 5024, end: 5119
+    name: "Cherokee", start: 0x13A0, end: 0x13FF
 };
 pub const UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS: UnicodeBlock =
     UnicodeBlock {
-        name: "Unified Canadian Aboriginal Syllabics", start: 5120, end: 5759
+        name: "Unified Canadian Aboriginal Syllabics", start: 0x1400, end: 0x167F
     };
 pub const OGHAM: UnicodeBlock = UnicodeBlock {
-    name: "Ogham", start: 5760, end: 5791
+    name: "Ogham", start: 0x1680, end: 0x169F
 };
 pub const RUNIC: UnicodeBlock = UnicodeBlock {
-    name: "Runic", start: 5792, end: 5887
+    name: "Runic", start: 0x16A0, end: 0x16FF
 };
 pub const TAGALOG: UnicodeBlock = UnicodeBlock {
-    name: "Tagalog", start: 5888, end: 5919
+    name: "Tagalog", start: 0x1700, end: 0x171F
 };
 pub const HANUNOO: UnicodeBlock = UnicodeBlock {
-    name: "Hanunoo", start: 5920, end: 5951
+    name: "Hanunoo", start: 0x1720, end: 0x173F
 };
 pub const BUHID: UnicodeBlock = UnicodeBlock {
-    name: "Buhid", start: 5952, end: 5983
+    name: "Buhid", start: 0x1740, end: 0x175F
 };
 pub const TAGBANWA: UnicodeBlock = UnicodeBlock {
-    name: "Tagbanwa", start: 5984, end: 6015
+    name: "Tagbanwa", start: 0x1760, end: 0x177F
 };
 pub const KHMER: UnicodeBlock = UnicodeBlock {
-    name: "Khmer", start: 6016, end: 6143
+    name: "Khmer", start: 0x1780, end: 0x17FF
 };
-pub const MONGOLIAN: UnicodeBlock = UnicodeBlock {
-    name: "Mongolian", start: 6144, end: 6319
-};
+pub const MONGOLIAN: UnicodeBlock =
+    UnicodeBlock {
+        name: "Mongolian", start: 0x1800, end: 0x18AF
+    };
 pub const UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED: UnicodeBlock = UnicodeBlock {
     name:  "Unified Canadian Aboriginal Syllabics Extended",
-    start: 6320,
-    end:   6399,
+    start: 0x18B0,
+    end:   0x18FF,
 };
 pub const LIMBU: UnicodeBlock = UnicodeBlock {
-    name: "Limbu", start: 6400, end: 6479
+    name: "Limbu", start: 0x1900, end: 0x194F
 };
 pub const TAI_LE: UnicodeBlock = UnicodeBlock {
-    name: "Tai Le", start: 6480, end: 6527
+    name: "Tai Le", start: 0x1950, end: 0x197F
 };
 pub const NEW_TAI_LUE: UnicodeBlock =
     UnicodeBlock {
-        name: "New Tai Lue", start: 6528, end: 6623
+        name: "New Tai Lue", start: 0x1980, end: 0x19DF
     };
 pub const KHMER_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Khmer Symbols", start: 6624, end: 6655
+        name: "Khmer Symbols", start: 0x19E0, end: 0x19FF
     };
 pub const BUGINESE: UnicodeBlock = UnicodeBlock {
-    name: "Buginese", start: 6656, end: 6687
+    name: "Buginese", start: 0x1A00, end: 0x1A1F
 };
 pub const TAI_THAM: UnicodeBlock = UnicodeBlock {
-    name: "Tai Tham", start: 6688, end: 6831
+    name: "Tai Tham", start: 0x1A20, end: 0x1AAF
 };
 pub const COMBINING_DIACRITICAL_MARKS_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Combining Diacritical Marks Extended", start: 6832, end: 6911
+        name: "Combining Diacritical Marks Extended", start: 0x1AB0, end: 0x1AFF
     };
 pub const BALINESE: UnicodeBlock = UnicodeBlock {
-    name: "Balinese", start: 6912, end: 7039
+    name: "Balinese", start: 0x1B00, end: 0x1B7F
 };
-pub const SUNDANESE: UnicodeBlock = UnicodeBlock {
-    name: "Sundanese", start: 7040, end: 7103
-};
+pub const SUNDANESE: UnicodeBlock =
+    UnicodeBlock {
+        name: "Sundanese", start: 0x1B80, end: 0x1BBF
+    };
 pub const BATAK: UnicodeBlock = UnicodeBlock {
-    name: "Batak", start: 7104, end: 7167
+    name: "Batak", start: 0x1BC0, end: 0x1BFF
 };
 pub const LEPCHA: UnicodeBlock = UnicodeBlock {
-    name: "Lepcha", start: 7168, end: 7247
+    name: "Lepcha", start: 0x1C00, end: 0x1C4F
 };
 pub const OL_CHIKI: UnicodeBlock = UnicodeBlock {
-    name: "Ol Chiki", start: 7248, end: 7295
+    name: "Ol Chiki", start: 0x1C50, end: 0x1C7F
 };
 pub const CYRILLIC_EXTENDED_C: UnicodeBlock =
     UnicodeBlock {
-        name: "Cyrillic Extended-C", start: 7296, end: 7311
+        name: "Cyrillic Extended-C", start: 0x1C80, end: 0x1C8F
     };
 pub const GEORGIAN_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Georgian Extended", start: 7312, end: 7359
+        name: "Georgian Extended", start: 0x1C90, end: 0x1CBF
     };
 pub const SUNDANESE_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Sundanese Supplement", start: 7360, end: 7375
+        name: "Sundanese Supplement", start: 0x1CC0, end: 0x1CCF
     };
 pub const VEDIC_EXTENSIONS: UnicodeBlock =
     UnicodeBlock {
-        name: "Vedic Extensions", start: 7376, end: 7423
+        name: "Vedic Extensions", start: 0x1CD0, end: 0x1CFF
     };
 pub const PHONETIC_EXTENSIONS: UnicodeBlock =
     UnicodeBlock {
-        name: "Phonetic Extensions", start: 7424, end: 7551
+        name: "Phonetic Extensions", start: 0x1D00, end: 0x1D7F
     };
 pub const PHONETIC_EXTENSIONS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Phonetic Extensions Supplement", start: 7552, end: 7615
+        name: "Phonetic Extensions Supplement", start: 0x1D80, end: 0x1DBF
     };
 pub const COMBINING_DIACRITICAL_MARKS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Combining Diacritical Marks Supplement", start: 7616, end: 7679
+        name: "Combining Diacritical Marks Supplement", start: 0x1DC0, end: 0x1DFF
     };
 pub const LATIN_EXTENDED_ADDITIONAL: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended Additional", start: 7680, end: 7935
+        name: "Latin Extended Additional", start: 0x1E00, end: 0x1EFF
     };
 pub const GREEK_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Greek Extended", start: 7936, end: 8191
+        name: "Greek Extended", start: 0x1F00, end: 0x1FFF
     };
 pub const GENERAL_PUNCTUATION: UnicodeBlock =
     UnicodeBlock {
-        name: "General Punctuation", start: 8192, end: 8303
+        name: "General Punctuation", start: 0x2000, end: 0x206F
     };
 pub const SUPERSCRIPTS_AND_SUBSCRIPTS: UnicodeBlock =
     UnicodeBlock {
-        name: "Superscripts and Subscripts", start: 8304, end: 8351
+        name: "Superscripts and Subscripts", start: 0x2070, end: 0x209F
     };
 pub const CURRENCY_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Currency Symbols", start: 8352, end: 8399
+        name: "Currency Symbols", start: 0x20A0, end: 0x20CF
     };
 pub const COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Combining Diacritical Marks for Symbols", start: 8400, end: 8447
+        name: "Combining Diacritical Marks for Symbols", start: 0x20D0, end: 0x20FF
     };
 pub const LETTERLIKE_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Letterlike Symbols", start: 8448, end: 8527
+        name: "Letterlike Symbols", start: 0x2100, end: 0x214F
     };
 pub const NUMBER_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Number Forms", start: 8528, end: 8591
+        name: "Number Forms", start: 0x2150, end: 0x218F
     };
 pub const ARROWS: UnicodeBlock = UnicodeBlock {
-    name: "Arrows", start: 8592, end: 8703
+    name: "Arrows", start: 0x2190, end: 0x21FF
 };
 pub const MATHEMATICAL_OPERATORS: UnicodeBlock =
     UnicodeBlock {
-        name: "Mathematical Operators", start: 8704, end: 8959
+        name: "Mathematical Operators", start: 0x2200, end: 0x22FF
     };
 pub const MISCELLANEOUS_TECHNICAL: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Technical", start: 8960, end: 9215
+        name: "Miscellaneous Technical", start: 0x2300, end: 0x23FF
     };
 pub const CONTROL_PICTURES: UnicodeBlock =
     UnicodeBlock {
-        name: "Control Pictures", start: 9216, end: 9279
+        name: "Control Pictures", start: 0x2400, end: 0x243F
     };
 pub const OPTICAL_CHARACTER_RECOGNITION: UnicodeBlock =
     UnicodeBlock {
-        name: "Optical Character Recognition", start: 9280, end: 9311
+        name: "Optical Character Recognition", start: 0x2440, end: 0x245F
     };
 pub const ENCLOSED_ALPHANUMERICS: UnicodeBlock =
     UnicodeBlock {
-        name: "Enclosed Alphanumerics", start: 9312, end: 9471
+        name: "Enclosed Alphanumerics", start: 0x2460, end: 0x24FF
     };
 pub const BOX_DRAWING: UnicodeBlock =
     UnicodeBlock {
-        name: "Box Drawing", start: 9472, end: 9599
+        name: "Box Drawing", start: 0x2500, end: 0x257F
     };
 pub const BLOCK_ELEMENTS: UnicodeBlock =
     UnicodeBlock {
-        name: "Block Elements", start: 9600, end: 9631
+        name: "Block Elements", start: 0x2580, end: 0x259F
     };
 pub const GEOMETRIC_SHAPES: UnicodeBlock =
     UnicodeBlock {
-        name: "Geometric Shapes", start: 9632, end: 9727
+        name: "Geometric Shapes", start: 0x25A0, end: 0x25FF
     };
 pub const MISCELLANEOUS_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Symbols", start: 9728, end: 9983
+        name: "Miscellaneous Symbols", start: 0x2600, end: 0x26FF
     };
 pub const DINGBATS: UnicodeBlock = UnicodeBlock {
-    name: "Dingbats", start: 9984, end: 10175
+    name: "Dingbats", start: 0x2700, end: 0x27BF
 };
 pub const MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Mathematical Symbols-A", start: 10176, end: 10223
+        name: "Miscellaneous Mathematical Symbols-A", start: 0x27C0, end: 0x27EF
     };
 pub const SUPPLEMENTAL_ARROWS_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Arrows-A", start: 10224, end: 10239
+        name: "Supplemental Arrows-A", start: 0x27F0, end: 0x27FF
     };
 pub const BRAILLE_PATTERNS: UnicodeBlock =
     UnicodeBlock {
-        name: "Braille Patterns", start: 10240, end: 10495
+        name: "Braille Patterns", start: 0x2800, end: 0x28FF
     };
 pub const SUPPLEMENTAL_ARROWS_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Arrows-B", start: 10496, end: 10623
+        name: "Supplemental Arrows-B", start: 0x2900, end: 0x297F
     };
 pub const MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Mathematical Symbols-B", start: 10624, end: 10751
+        name: "Miscellaneous Mathematical Symbols-B", start: 0x2980, end: 0x29FF
     };
 pub const SUPPLEMENTAL_MATHEMATICAL_OPERATORS: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Mathematical Operators", start: 10752, end: 11007
+        name: "Supplemental Mathematical Operators", start: 0x2A00, end: 0x2AFF
     };
 pub const MISCELLANEOUS_SYMBOLS_AND_ARROWS: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Symbols and Arrows", start: 11008, end: 11263
+        name: "Miscellaneous Symbols and Arrows", start: 0x2B00, end: 0x2BFF
     };
 pub const GLAGOLITIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Glagolitic", start: 11264, end: 11359
+        name: "Glagolitic", start: 0x2C00, end: 0x2C5F
     };
 pub const LATIN_EXTENDED_C: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-C", start: 11360, end: 11391
+        name: "Latin Extended-C", start: 0x2C60, end: 0x2C7F
     };
 pub const COPTIC: UnicodeBlock = UnicodeBlock {
-    name: "Coptic", start: 11392, end: 11519
+    name: "Coptic", start: 0x2C80, end: 0x2CFF
 };
 pub const GEORGIAN_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Georgian Supplement", start: 11520, end: 11567
+        name: "Georgian Supplement", start: 0x2D00, end: 0x2D2F
     };
 pub const TIFINAGH: UnicodeBlock = UnicodeBlock {
-    name: "Tifinagh", start: 11568, end: 11647
+    name: "Tifinagh", start: 0x2D30, end: 0x2D7F
 };
 pub const ETHIOPIC_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Ethiopic Extended", start: 11648, end: 11743
+        name: "Ethiopic Extended", start: 0x2D80, end: 0x2DDF
     };
 pub const CYRILLIC_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Cyrillic Extended-A", start: 11744, end: 11775
+        name: "Cyrillic Extended-A", start: 0x2DE0, end: 0x2DFF
     };
 pub const SUPPLEMENTAL_PUNCTUATION: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Punctuation", start: 11776, end: 11903
+        name: "Supplemental Punctuation", start: 0x2E00, end: 0x2E7F
     };
 pub const CJK_RADICALS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Radicals Supplement", start: 11904, end: 12031
+        name: "CJK Radicals Supplement", start: 0x2E80, end: 0x2EFF
     };
 pub const KANGXI_RADICALS: UnicodeBlock =
     UnicodeBlock {
-        name: "Kangxi Radicals", start: 12032, end: 12255
+        name: "Kangxi Radicals", start: 0x2F00, end: 0x2FDF
     };
 pub const IDEOGRAPHIC_DESCRIPTION_CHARACTERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Ideographic Description Characters", start: 12272, end: 12287
+        name: "Ideographic Description Characters", start: 0x2FF0, end: 0x2FFF
     };
 pub const CJK_SYMBOLS_AND_PUNCTUATION: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Symbols and Punctuation", start: 12288, end: 12351
+        name: "CJK Symbols and Punctuation", start: 0x3000, end: 0x303F
     };
 pub const HIRAGANA: UnicodeBlock = UnicodeBlock {
-    name: "Hiragana", start: 12352, end: 12447
+    name: "Hiragana", start: 0x3040, end: 0x309F
 };
 pub const KATAKANA: UnicodeBlock = UnicodeBlock {
-    name: "Katakana", start: 12448, end: 12543
+    name: "Katakana", start: 0x30A0, end: 0x30FF
 };
 pub const BOPOMOFO: UnicodeBlock = UnicodeBlock {
-    name: "Bopomofo", start: 12544, end: 12591
+    name: "Bopomofo", start: 0x3100, end: 0x312F
 };
 pub const HANGUL_COMPATIBILITY_JAMO: UnicodeBlock =
     UnicodeBlock {
-        name: "Hangul Compatibility Jamo", start: 12592, end: 12687
+        name: "Hangul Compatibility Jamo", start: 0x3130, end: 0x318F
     };
 pub const KANBUN: UnicodeBlock = UnicodeBlock {
-    name: "Kanbun", start: 12688, end: 12703
+    name: "Kanbun", start: 0x3190, end: 0x319F
 };
 pub const BOPOMOFO_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Bopomofo Extended", start: 12704, end: 12735
+        name: "Bopomofo Extended", start: 0x31A0, end: 0x31BF
     };
 pub const CJK_STROKES: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Strokes", start: 12736, end: 12783
+        name: "CJK Strokes", start: 0x31C0, end: 0x31EF
     };
 pub const KATAKANA_PHONETIC_EXTENSIONS: UnicodeBlock =
     UnicodeBlock {
-        name: "Katakana Phonetic Extensions", start: 12784, end: 12799
+        name: "Katakana Phonetic Extensions", start: 0x31F0, end: 0x31FF
     };
 pub const ENCLOSED_CJK_LETTERS_AND_MONTHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Enclosed CJK Letters and Months", start: 12800, end: 13055
+        name: "Enclosed CJK Letters and Months", start: 0x3200, end: 0x32FF
     };
 pub const CJK_COMPATIBILITY: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Compatibility", start: 13056, end: 13311
+        name: "CJK Compatibility", start: 0x3300, end: 0x33FF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension A", start: 13312, end: 19903
+        name: "CJK Unified Ideographs Extension A", start: 0x3400, end: 0x4DBF
     };
 pub const YIJING_HEXAGRAM_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Yijing Hexagram Symbols", start: 19904, end: 19967
+        name: "Yijing Hexagram Symbols", start: 0x4DC0, end: 0x4DFF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs", start: 19968, end: 40959
+        name: "CJK Unified Ideographs", start: 0x4E00, end: 0x9FFF
     };
 pub const YI_SYLLABLES: UnicodeBlock =
     UnicodeBlock {
-        name: "Yi Syllables", start: 40960, end: 42127
+        name: "Yi Syllables", start: 0xA000, end: 0xA48F
     };
 pub const YI_RADICALS: UnicodeBlock =
     UnicodeBlock {
-        name: "Yi Radicals", start: 42128, end: 42191
+        name: "Yi Radicals", start: 0xA490, end: 0xA4CF
     };
 pub const LISU: UnicodeBlock = UnicodeBlock {
-    name: "Lisu", start: 42192, end: 42239
+    name: "Lisu", start: 0xA4D0, end: 0xA4FF
 };
 pub const VAI: UnicodeBlock = UnicodeBlock {
-    name: "Vai", start: 42240, end: 42559
+    name: "Vai", start: 0xA500, end: 0xA63F
 };
 pub const CYRILLIC_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Cyrillic Extended-B", start: 42560, end: 42655
+        name: "Cyrillic Extended-B", start: 0xA640, end: 0xA69F
     };
 pub const BAMUM: UnicodeBlock = UnicodeBlock {
-    name: "Bamum", start: 42656, end: 42751
+    name: "Bamum", start: 0xA6A0, end: 0xA6FF
 };
 pub const MODIFIER_TONE_LETTERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Modifier Tone Letters", start: 42752, end: 42783
+        name: "Modifier Tone Letters", start: 0xA700, end: 0xA71F
     };
 pub const LATIN_EXTENDED_D: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-D", start: 42784, end: 43007
+        name: "Latin Extended-D", start: 0xA720, end: 0xA7FF
     };
 pub const SYLOTI_NAGRI: UnicodeBlock =
     UnicodeBlock {
-        name: "Syloti Nagri", start: 43008, end: 43055
+        name: "Syloti Nagri", start: 0xA800, end: 0xA82F
     };
 pub const COMMON_INDIC_NUMBER_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Common Indic Number Forms", start: 43056, end: 43071
+        name: "Common Indic Number Forms", start: 0xA830, end: 0xA83F
     };
 pub const PHAGS_PA: UnicodeBlock = UnicodeBlock {
-    name: "Phags-pa", start: 43072, end: 43135
+    name: "Phags-pa", start: 0xA840, end: 0xA87F
 };
 pub const SAURASHTRA: UnicodeBlock =
     UnicodeBlock {
-        name: "Saurashtra", start: 43136, end: 43231
+        name: "Saurashtra", start: 0xA880, end: 0xA8DF
     };
 pub const DEVANAGARI_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Devanagari Extended", start: 43232, end: 43263
+        name: "Devanagari Extended", start: 0xA8E0, end: 0xA8FF
     };
 pub const KAYAH_LI: UnicodeBlock = UnicodeBlock {
-    name: "Kayah Li", start: 43264, end: 43311
+    name: "Kayah Li", start: 0xA900, end: 0xA92F
 };
 pub const REJANG: UnicodeBlock = UnicodeBlock {
-    name: "Rejang", start: 43312, end: 43359
+    name: "Rejang", start: 0xA930, end: 0xA95F
 };
 pub const HANGUL_JAMO_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Hangul Jamo Extended-A", start: 43360, end: 43391
+        name: "Hangul Jamo Extended-A", start: 0xA960, end: 0xA97F
     };
 pub const JAVANESE: UnicodeBlock = UnicodeBlock {
-    name: "Javanese", start: 43392, end: 43487
+    name: "Javanese", start: 0xA980, end: 0xA9DF
 };
 pub const MYANMAR_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Myanmar Extended-B", start: 43488, end: 43519
+        name: "Myanmar Extended-B", start: 0xA9E0, end: 0xA9FF
     };
 pub const CHAM: UnicodeBlock = UnicodeBlock {
-    name: "Cham", start: 43520, end: 43615
+    name: "Cham", start: 0xAA00, end: 0xAA5F
 };
 pub const MYANMAR_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Myanmar Extended-A", start: 43616, end: 43647
+        name: "Myanmar Extended-A", start: 0xAA60, end: 0xAA7F
     };
 pub const TAI_VIET: UnicodeBlock = UnicodeBlock {
-    name: "Tai Viet", start: 43648, end: 43743
+    name: "Tai Viet", start: 0xAA80, end: 0xAADF
 };
 pub const MEETEI_MAYEK_EXTENSIONS: UnicodeBlock =
     UnicodeBlock {
-        name: "Meetei Mayek Extensions", start: 43744, end: 43775
+        name: "Meetei Mayek Extensions", start: 0xAAE0, end: 0xAAFF
     };
 pub const ETHIOPIC_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Ethiopic Extended-A", start: 43776, end: 43823
+        name: "Ethiopic Extended-A", start: 0xAB00, end: 0xAB2F
     };
 pub const LATIN_EXTENDED_E: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-E", start: 43824, end: 43887
+        name: "Latin Extended-E", start: 0xAB30, end: 0xAB6F
     };
 pub const CHEROKEE_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Cherokee Supplement", start: 43888, end: 43967
+        name: "Cherokee Supplement", start: 0xAB70, end: 0xABBF
     };
 pub const MEETEI_MAYEK: UnicodeBlock =
     UnicodeBlock {
-        name: "Meetei Mayek", start: 43968, end: 44031
+        name: "Meetei Mayek", start: 0xABC0, end: 0xABFF
     };
 pub const HANGUL_SYLLABLES: UnicodeBlock =
     UnicodeBlock {
-        name: "Hangul Syllables", start: 44032, end: 55215
+        name: "Hangul Syllables", start: 0xAC00, end: 0xD7AF
     };
 pub const HANGUL_JAMO_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Hangul Jamo Extended-B", start: 55216, end: 55295
+        name: "Hangul Jamo Extended-B", start: 0xD7B0, end: 0xD7FF
     };
 pub const HIGH_SURROGATES: UnicodeBlock =
     UnicodeBlock {
-        name: "High Surrogates", start: 55296, end: 56191
+        name: "High Surrogates", start: 0xD800, end: 0xDB7F
     };
 pub const HIGH_PRIVATE_USE_SURROGATES: UnicodeBlock =
     UnicodeBlock {
-        name: "High Private Use Surrogates", start: 56192, end: 56319
+        name: "High Private Use Surrogates", start: 0xDB80, end: 0xDBFF
     };
 pub const LOW_SURROGATES: UnicodeBlock =
     UnicodeBlock {
-        name: "Low Surrogates", start: 56320, end: 57343
+        name: "Low Surrogates", start: 0xDC00, end: 0xDFFF
     };
 pub const PRIVATE_USE_AREA: UnicodeBlock =
     UnicodeBlock {
-        name: "Private Use Area", start: 57344, end: 63743
+        name: "Private Use Area", start: 0xE000, end: 0xF8FF
     };
 pub const CJK_COMPATIBILITY_IDEOGRAPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Compatibility Ideographs", start: 63744, end: 64255
+        name: "CJK Compatibility Ideographs", start: 0xF900, end: 0xFAFF
     };
 pub const ALPHABETIC_PRESENTATION_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Alphabetic Presentation Forms", start: 64256, end: 64335
+        name: "Alphabetic Presentation Forms", start: 0xFB00, end: 0xFB4F
     };
 pub const ARABIC_PRESENTATION_FORMS_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Presentation Forms-A", start: 64336, end: 65023
+        name: "Arabic Presentation Forms-A", start: 0xFB50, end: 0xFDFF
     };
 pub const VARIATION_SELECTORS: UnicodeBlock =
     UnicodeBlock {
-        name: "Variation Selectors", start: 65024, end: 65039
+        name: "Variation Selectors", start: 0xFE00, end: 0xFE0F
     };
 pub const VERTICAL_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Vertical Forms", start: 65040, end: 65055
+        name: "Vertical Forms", start: 0xFE10, end: 0xFE1F
     };
 pub const COMBINING_HALF_MARKS: UnicodeBlock =
     UnicodeBlock {
-        name: "Combining Half Marks", start: 65056, end: 65071
+        name: "Combining Half Marks", start: 0xFE20, end: 0xFE2F
     };
 pub const CJK_COMPATIBILITY_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Compatibility Forms", start: 65072, end: 65103
+        name: "CJK Compatibility Forms", start: 0xFE30, end: 0xFE4F
     };
 pub const SMALL_FORM_VARIANTS: UnicodeBlock =
     UnicodeBlock {
-        name: "Small Form Variants", start: 65104, end: 65135
+        name: "Small Form Variants", start: 0xFE50, end: 0xFE6F
     };
 pub const ARABIC_PRESENTATION_FORMS_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Presentation Forms-B", start: 65136, end: 65279
+        name: "Arabic Presentation Forms-B", start: 0xFE70, end: 0xFEFF
     };
 pub const HALFWIDTH_AND_FULLWIDTH_FORMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Halfwidth and Fullwidth Forms", start: 65280, end: 65519
+        name: "Halfwidth and Fullwidth Forms", start: 0xFF00, end: 0xFFEF
     };
 pub const SPECIALS: UnicodeBlock = UnicodeBlock {
-    name: "Specials", start: 65520, end: 65535
+    name: "Specials", start: 0xFFF0, end: 0xFFFF
 };
 pub const LINEAR_B_SYLLABARY: UnicodeBlock =
     UnicodeBlock {
-        name: "Linear B Syllabary", start: 65536, end: 65663
+        name: "Linear B Syllabary", start: 0x10000, end: 0x1007F
     };
 pub const LINEAR_B_IDEOGRAMS: UnicodeBlock =
     UnicodeBlock {
-        name: "Linear B Ideograms", start: 65664, end: 65791
+        name: "Linear B Ideograms", start: 0x10080, end: 0x100FF
     };
 pub const AEGEAN_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Aegean Numbers", start: 65792, end: 65855
+        name: "Aegean Numbers", start: 0x10100, end: 0x1013F
     };
 pub const ANCIENT_GREEK_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Ancient Greek Numbers", start: 65856, end: 65935
+        name: "Ancient Greek Numbers", start: 0x10140, end: 0x1018F
     };
 pub const ANCIENT_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Ancient Symbols", start: 65936, end: 65999
+        name: "Ancient Symbols", start: 0x10190, end: 0x101CF
     };
 pub const PHAISTOS_DISC: UnicodeBlock =
     UnicodeBlock {
-        name: "Phaistos Disc", start: 66000, end: 66047
+        name: "Phaistos Disc", start: 0x101D0, end: 0x101FF
     };
 pub const LYCIAN: UnicodeBlock = UnicodeBlock {
-    name: "Lycian", start: 66176, end: 66207
+    name: "Lycian", start: 0x10280, end: 0x1029F
 };
 pub const CARIAN: UnicodeBlock = UnicodeBlock {
-    name: "Carian", start: 66208, end: 66271
+    name: "Carian", start: 0x102A0, end: 0x102DF
 };
 pub const COPTIC_EPACT_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Coptic Epact Numbers", start: 66272, end: 66303
+        name: "Coptic Epact Numbers", start: 0x102E0, end: 0x102FF
     };
 pub const OLD_ITALIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Italic", start: 66304, end: 66351
+        name: "Old Italic", start: 0x10300, end: 0x1032F
     };
 pub const GOTHIC: UnicodeBlock = UnicodeBlock {
-    name: "Gothic", start: 66352, end: 66383
+    name: "Gothic", start: 0x10330, end: 0x1034F
 };
 pub const OLD_PERMIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Permic", start: 66384, end: 66431
+        name: "Old Permic", start: 0x10350, end: 0x1037F
     };
-pub const UGARITIC: UnicodeBlock = UnicodeBlock {
-    name: "Ugaritic", start: 66432, end: 66463
-};
+pub const UGARITIC: UnicodeBlock =
+    UnicodeBlock {
+        name: "Ugaritic", start: 0x10380, end: 0x1039F
+    };
 pub const OLD_PERSIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Persian", start: 66464, end: 66527
+        name: "Old Persian", start: 0x103A0, end: 0x103DF
     };
 pub const DESERET: UnicodeBlock = UnicodeBlock {
-    name: "Deseret", start: 66560, end: 66639
+    name: "Deseret", start: 0x10400, end: 0x1044F
 };
 pub const SHAVIAN: UnicodeBlock = UnicodeBlock {
-    name: "Shavian", start: 66640, end: 66687
+    name: "Shavian", start: 0x10450, end: 0x1047F
 };
 pub const OSMANYA: UnicodeBlock = UnicodeBlock {
-    name: "Osmanya", start: 66688, end: 66735
+    name: "Osmanya", start: 0x10480, end: 0x104AF
 };
 pub const OSAGE: UnicodeBlock = UnicodeBlock {
-    name: "Osage", start: 66736, end: 66815
+    name: "Osage", start: 0x104B0, end: 0x104FF
 };
 pub const ELBASAN: UnicodeBlock = UnicodeBlock {
-    name: "Elbasan", start: 66816, end: 66863
+    name: "Elbasan", start: 0x10500, end: 0x1052F
 };
 pub const CAUCASIAN_ALBANIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Caucasian Albanian", start: 66864, end: 66927
+        name: "Caucasian Albanian", start: 0x10530, end: 0x1056F
     };
-pub const VITHKUQI: UnicodeBlock = UnicodeBlock {
-    name: "Vithkuqi", start: 66928, end: 67007
+pub const VITHKUQI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Vithkuqi", start: 0x10570, end: 0x105BF
+    };
+pub const TODHRI: UnicodeBlock = UnicodeBlock {
+    name: "Todhri", start: 0x105C0, end: 0x105FF
 };
-pub const LINEAR_A: UnicodeBlock = UnicodeBlock {
-    name: "Linear A", start: 67072, end: 67455
-};
+pub const LINEAR_A: UnicodeBlock =
+    UnicodeBlock {
+        name: "Linear A", start: 0x10600, end: 0x1077F
+    };
 pub const LATIN_EXTENDED_F: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-F", start: 67456, end: 67519
+        name: "Latin Extended-F", start: 0x10780, end: 0x107BF
     };
 pub const CYPRIOT_SYLLABARY: UnicodeBlock =
     UnicodeBlock {
-        name: "Cypriot Syllabary", start: 67584, end: 67647
+        name: "Cypriot Syllabary", start: 0x10800, end: 0x1083F
     };
 pub const IMPERIAL_ARAMAIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Imperial Aramaic", start: 67648, end: 67679
+        name: "Imperial Aramaic", start: 0x10840, end: 0x1085F
     };
-pub const PALMYRENE: UnicodeBlock = UnicodeBlock {
-    name: "Palmyrene", start: 67680, end: 67711
-};
-pub const NABATAEAN: UnicodeBlock = UnicodeBlock {
-    name: "Nabataean", start: 67712, end: 67759
-};
+pub const PALMYRENE: UnicodeBlock =
+    UnicodeBlock {
+        name: "Palmyrene", start: 0x10860, end: 0x1087F
+    };
+pub const NABATAEAN: UnicodeBlock =
+    UnicodeBlock {
+        name: "Nabataean", start: 0x10880, end: 0x108AF
+    };
 pub const HATRAN: UnicodeBlock = UnicodeBlock {
-    name: "Hatran", start: 67808, end: 67839
+    name: "Hatran", start: 0x108E0, end: 0x108FF
 };
 pub const PHOENICIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Phoenician", start: 67840, end: 67871
+        name: "Phoenician", start: 0x10900, end: 0x1091F
     };
 pub const LYDIAN: UnicodeBlock = UnicodeBlock {
-    name: "Lydian", start: 67872, end: 67903
+    name: "Lydian", start: 0x10920, end: 0x1093F
 };
 pub const MEROITIC_HIEROGLYPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Meroitic Hieroglyphs", start: 67968, end: 67999
+        name: "Meroitic Hieroglyphs", start: 0x10980, end: 0x1099F
     };
 pub const MEROITIC_CURSIVE: UnicodeBlock =
     UnicodeBlock {
-        name: "Meroitic Cursive", start: 68000, end: 68095
+        name: "Meroitic Cursive", start: 0x109A0, end: 0x109FF
     };
 pub const KHAROSHTHI: UnicodeBlock =
     UnicodeBlock {
-        name: "Kharoshthi", start: 68096, end: 68191
+        name: "Kharoshthi", start: 0x10A00, end: 0x10A5F
     };
 pub const OLD_SOUTH_ARABIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Old South Arabian", start: 68192, end: 68223
+        name: "Old South Arabian", start: 0x10A60, end: 0x10A7F
     };
 pub const OLD_NORTH_ARABIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Old North Arabian", start: 68224, end: 68255
+        name: "Old North Arabian", start: 0x10A80, end: 0x10A9F
     };
 pub const MANICHAEAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Manichaean", start: 68288, end: 68351
+        name: "Manichaean", start: 0x10AC0, end: 0x10AFF
     };
 pub const AVESTAN: UnicodeBlock = UnicodeBlock {
-    name: "Avestan", start: 68352, end: 68415
+    name: "Avestan", start: 0x10B00, end: 0x10B3F
 };
 pub const INSCRIPTIONAL_PARTHIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Inscriptional Parthian", start: 68416, end: 68447
+        name: "Inscriptional Parthian", start: 0x10B40, end: 0x10B5F
     };
 pub const INSCRIPTIONAL_PAHLAVI: UnicodeBlock =
     UnicodeBlock {
-        name: "Inscriptional Pahlavi", start: 68448, end: 68479
+        name: "Inscriptional Pahlavi", start: 0x10B60, end: 0x10B7F
     };
 pub const PSALTER_PAHLAVI: UnicodeBlock =
     UnicodeBlock {
-        name: "Psalter Pahlavi", start: 68480, end: 68527
+        name: "Psalter Pahlavi", start: 0x10B80, end: 0x10BAF
     };
 pub const OLD_TURKIC: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Turkic", start: 68608, end: 68687
+        name: "Old Turkic", start: 0x10C00, end: 0x10C4F
     };
 pub const OLD_HUNGARIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Hungarian", start: 68736, end: 68863
+        name: "Old Hungarian", start: 0x10C80, end: 0x10CFF
     };
 pub const HANIFI_ROHINGYA: UnicodeBlock =
     UnicodeBlock {
-        name: "Hanifi Rohingya", start: 68864, end: 68927
+        name: "Hanifi Rohingya", start: 0x10D00, end: 0x10D3F
     };
+pub const GARAY: UnicodeBlock = UnicodeBlock {
+    name: "Garay", start: 0x10D40, end: 0x10D8F
+};
 pub const RUMI_NUMERAL_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Rumi Numeral Symbols", start: 69216, end: 69247
+        name: "Rumi Numeral Symbols", start: 0x10E60, end: 0x10E7F
     };
 pub const YEZIDI: UnicodeBlock = UnicodeBlock {
-    name: "Yezidi", start: 69248, end: 69311
+    name: "Yezidi", start: 0x10E80, end: 0x10EBF
 };
 pub const ARABIC_EXTENDED_C: UnicodeBlock =
     UnicodeBlock {
-        name: "Arabic Extended-C", start: 69312, end: 69375
+        name: "Arabic Extended-C", start: 0x10EC0, end: 0x10EFF
     };
 pub const OLD_SOGDIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Sogdian", start: 69376, end: 69423
+        name: "Old Sogdian", start: 0x10F00, end: 0x10F2F
     };
 pub const SOGDIAN: UnicodeBlock = UnicodeBlock {
-    name: "Sogdian", start: 69424, end: 69487
+    name: "Sogdian", start: 0x10F30, end: 0x10F6F
 };
 pub const OLD_UYGHUR: UnicodeBlock =
     UnicodeBlock {
-        name: "Old Uyghur", start: 69488, end: 69551
+        name: "Old Uyghur", start: 0x10F70, end: 0x10FAF
     };
 pub const CHORASMIAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Chorasmian", start: 69552, end: 69599
+        name: "Chorasmian", start: 0x10FB0, end: 0x10FDF
     };
 pub const ELYMAIC: UnicodeBlock = UnicodeBlock {
-    name: "Elymaic", start: 69600, end: 69631
+    name: "Elymaic", start: 0x10FE0, end: 0x10FFF
 };
 pub const BRAHMI: UnicodeBlock = UnicodeBlock {
-    name: "Brahmi", start: 69632, end: 69759
+    name: "Brahmi", start: 0x11000, end: 0x1107F
 };
 pub const KAITHI: UnicodeBlock = UnicodeBlock {
-    name: "Kaithi", start: 69760, end: 69839
+    name: "Kaithi", start: 0x11080, end: 0x110CF
 };
 pub const SORA_SOMPENG: UnicodeBlock =
     UnicodeBlock {
-        name: "Sora Sompeng", start: 69840, end: 69887
+        name: "Sora Sompeng", start: 0x110D0, end: 0x110FF
     };
 pub const CHAKMA: UnicodeBlock = UnicodeBlock {
-    name: "Chakma", start: 69888, end: 69967
+    name: "Chakma", start: 0x11100, end: 0x1114F
 };
-pub const MAHAJANI: UnicodeBlock = UnicodeBlock {
-    name: "Mahajani", start: 69968, end: 70015
-};
+pub const MAHAJANI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Mahajani", start: 0x11150, end: 0x1117F
+    };
 pub const SHARADA: UnicodeBlock = UnicodeBlock {
-    name: "Sharada", start: 70016, end: 70111
+    name: "Sharada", start: 0x11180, end: 0x111DF
 };
 pub const SINHALA_ARCHAIC_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Sinhala Archaic Numbers", start: 70112, end: 70143
+        name: "Sinhala Archaic Numbers", start: 0x111E0, end: 0x111FF
     };
 pub const KHOJKI: UnicodeBlock = UnicodeBlock {
-    name: "Khojki", start: 70144, end: 70223
+    name: "Khojki", start: 0x11200, end: 0x1124F
 };
 pub const MULTANI: UnicodeBlock = UnicodeBlock {
-    name: "Multani", start: 70272, end: 70319
+    name: "Multani", start: 0x11280, end: 0x112AF
 };
-pub const KHUDAWADI: UnicodeBlock = UnicodeBlock {
-    name: "Khudawadi", start: 70320, end: 70399
-};
+pub const KHUDAWADI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Khudawadi", start: 0x112B0, end: 0x112FF
+    };
 pub const GRANTHA: UnicodeBlock = UnicodeBlock {
-    name: "Grantha", start: 70400, end: 70527
+    name: "Grantha", start: 0x11300, end: 0x1137F
 };
+pub const TULU_TIGALARI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Tulu-Tigalari", start: 0x11380, end: 0x113FF
+    };
 pub const NEWA: UnicodeBlock = UnicodeBlock {
-    name: "Newa", start: 70656, end: 70783
+    name: "Newa", start: 0x11400, end: 0x1147F
 };
 pub const TIRHUTA: UnicodeBlock = UnicodeBlock {
-    name: "Tirhuta", start: 70784, end: 70879
+    name: "Tirhuta", start: 0x11480, end: 0x114DF
 };
 pub const SIDDHAM: UnicodeBlock = UnicodeBlock {
-    name: "Siddham", start: 71040, end: 71167
+    name: "Siddham", start: 0x11580, end: 0x115FF
 };
 pub const MODI: UnicodeBlock = UnicodeBlock {
-    name: "Modi", start: 71168, end: 71263
+    name: "Modi", start: 0x11600, end: 0x1165F
 };
 pub const MONGOLIAN_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Mongolian Supplement", start: 71264, end: 71295
+        name: "Mongolian Supplement", start: 0x11660, end: 0x1167F
     };
 pub const TAKRI: UnicodeBlock = UnicodeBlock {
-    name: "Takri", start: 71296, end: 71375
+    name: "Takri", start: 0x11680, end: 0x116CF
 };
+pub const MYANMAR_EXTENDED_C: UnicodeBlock =
+    UnicodeBlock {
+        name: "Myanmar Extended-C", start: 0x116D0, end: 0x116FF
+    };
 pub const AHOM: UnicodeBlock = UnicodeBlock {
-    name: "Ahom", start: 71424, end: 71503
+    name: "Ahom", start: 0x11700, end: 0x1174F
 };
 pub const DOGRA: UnicodeBlock = UnicodeBlock {
-    name: "Dogra", start: 71680, end: 71759
+    name: "Dogra", start: 0x11800, end: 0x1184F
 };
 pub const WARANG_CITI: UnicodeBlock =
     UnicodeBlock {
-        name: "Warang Citi", start: 71840, end: 71935
+        name: "Warang Citi", start: 0x118A0, end: 0x118FF
     };
 pub const DIVES_AKURU: UnicodeBlock =
     UnicodeBlock {
-        name: "Dives Akuru", start: 71936, end: 72031
+        name: "Dives Akuru", start: 0x11900, end: 0x1195F
     };
 pub const NANDINAGARI: UnicodeBlock =
     UnicodeBlock {
-        name: "Nandinagari", start: 72096, end: 72191
+        name: "Nandinagari", start: 0x119A0, end: 0x119FF
     };
 pub const ZANABAZAR_SQUARE: UnicodeBlock =
     UnicodeBlock {
-        name: "Zanabazar Square", start: 72192, end: 72271
+        name: "Zanabazar Square", start: 0x11A00, end: 0x11A4F
     };
 pub const SOYOMBO: UnicodeBlock = UnicodeBlock {
-    name: "Soyombo", start: 72272, end: 72367
+    name: "Soyombo", start: 0x11A50, end: 0x11AAF
 };
 pub const UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A: UnicodeBlock = UnicodeBlock {
     name:  "Unified Canadian Aboriginal Syllabics Extended-A",
-    start: 72368,
-    end:   72383,
+    start: 0x11AB0,
+    end:   0x11ABF,
 };
 pub const PAU_CIN_HAU: UnicodeBlock =
     UnicodeBlock {
-        name: "Pau Cin Hau", start: 72384, end: 72447
+        name: "Pau Cin Hau", start: 0x11AC0, end: 0x11AFF
     };
 pub const DEVANAGARI_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Devanagari Extended-A", start: 72448, end: 72543
+        name: "Devanagari Extended-A", start: 0x11B00, end: 0x11B5F
     };
-pub const BHAIKSUKI: UnicodeBlock = UnicodeBlock {
-    name: "Bhaiksuki", start: 72704, end: 72815
+pub const SUNUWAR: UnicodeBlock = UnicodeBlock {
+    name: "Sunuwar", start: 0x11BC0, end: 0x11BFF
 };
+pub const BHAIKSUKI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Bhaiksuki", start: 0x11C00, end: 0x11C6F
+    };
 pub const MARCHEN: UnicodeBlock = UnicodeBlock {
-    name: "Marchen", start: 72816, end: 72895
+    name: "Marchen", start: 0x11C70, end: 0x11CBF
 };
 pub const MASARAM_GONDI: UnicodeBlock =
     UnicodeBlock {
-        name: "Masaram Gondi", start: 72960, end: 73055
+        name: "Masaram Gondi", start: 0x11D00, end: 0x11D5F
     };
 pub const GUNJALA_GONDI: UnicodeBlock =
     UnicodeBlock {
-        name: "Gunjala Gondi", start: 73056, end: 73135
+        name: "Gunjala Gondi", start: 0x11D60, end: 0x11DAF
     };
 pub const MAKASAR: UnicodeBlock = UnicodeBlock {
-    name: "Makasar", start: 73440, end: 73471
+    name: "Makasar", start: 0x11EE0, end: 0x11EFF
 };
 pub const KAWI: UnicodeBlock = UnicodeBlock {
-    name: "Kawi", start: 73472, end: 73567
+    name: "Kawi", start: 0x11F00, end: 0x11F5F
 };
 pub const LISU_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Lisu Supplement", start: 73648, end: 73663
+        name: "Lisu Supplement", start: 0x11FB0, end: 0x11FBF
     };
 pub const TAMIL_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Tamil Supplement", start: 73664, end: 73727
+        name: "Tamil Supplement", start: 0x11FC0, end: 0x11FFF
     };
-pub const CUNEIFORM: UnicodeBlock = UnicodeBlock {
-    name: "Cuneiform", start: 73728, end: 74751
-};
+pub const CUNEIFORM: UnicodeBlock =
+    UnicodeBlock {
+        name: "Cuneiform", start: 0x12000, end: 0x123FF
+    };
 pub const CUNEIFORM_NUMBERS_AND_PUNCTUATION: UnicodeBlock =
     UnicodeBlock {
-        name: "Cuneiform Numbers and Punctuation", start: 74752, end: 74879
+        name: "Cuneiform Numbers and Punctuation", start: 0x12400, end: 0x1247F
     };
 pub const EARLY_DYNASTIC_CUNEIFORM: UnicodeBlock =
     UnicodeBlock {
-        name: "Early Dynastic Cuneiform", start: 74880, end: 75087
+        name: "Early Dynastic Cuneiform", start: 0x12480, end: 0x1254F
     };
 pub const CYPRO_MINOAN: UnicodeBlock =
     UnicodeBlock {
-        name: "Cypro-Minoan", start: 77712, end: 77823
+        name: "Cypro-Minoan", start: 0x12F90, end: 0x12FFF
     };
 pub const EGYPTIAN_HIEROGLYPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Egyptian Hieroglyphs", start: 77824, end: 78895
+        name: "Egyptian Hieroglyphs", start: 0x13000, end: 0x1342F
     };
 pub const EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Egyptian Hieroglyph Format Controls", start: 78896, end: 78943
+        name: "Egyptian Hieroglyph Format Controls", start: 0x13430, end: 0x1345F
+    };
+pub const EGYPTIAN_HIEROGLYPHS_EXTENDED_A: UnicodeBlock =
+    UnicodeBlock {
+        name: "Egyptian Hieroglyphs Extended-A", start: 0x13460, end: 0x143FF
     };
 pub const ANATOLIAN_HIEROGLYPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Anatolian Hieroglyphs", start: 82944, end: 83583
+        name: "Anatolian Hieroglyphs", start: 0x14400, end: 0x1467F
+    };
+pub const GURUNG_KHEMA: UnicodeBlock =
+    UnicodeBlock {
+        name: "Gurung Khema", start: 0x16100, end: 0x1613F
     };
 pub const BAMUM_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Bamum Supplement", start: 92160, end: 92735
+        name: "Bamum Supplement", start: 0x16800, end: 0x16A3F
     };
 pub const MRO: UnicodeBlock = UnicodeBlock {
-    name: "Mro", start: 92736, end: 92783
+    name: "Mro", start: 0x16A40, end: 0x16A6F
 };
 pub const TANGSA: UnicodeBlock = UnicodeBlock {
-    name: "Tangsa", start: 92784, end: 92879
+    name: "Tangsa", start: 0x16A70, end: 0x16ACF
 };
-pub const BASSA_VAH: UnicodeBlock = UnicodeBlock {
-    name: "Bassa Vah", start: 92880, end: 92927
-};
+pub const BASSA_VAH: UnicodeBlock =
+    UnicodeBlock {
+        name: "Bassa Vah", start: 0x16AD0, end: 0x16AFF
+    };
 pub const PAHAWH_HMONG: UnicodeBlock =
     UnicodeBlock {
-        name: "Pahawh Hmong", start: 92928, end: 93071
+        name: "Pahawh Hmong", start: 0x16B00, end: 0x16B8F
+    };
+pub const KIRAT_RAI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Kirat Rai", start: 0x16D40, end: 0x16D7F
     };
 pub const MEDEFAIDRIN: UnicodeBlock =
     UnicodeBlock {
-        name: "Medefaidrin", start: 93760, end: 93855
+        name: "Medefaidrin", start: 0x16E40, end: 0x16E9F
     };
 pub const MIAO: UnicodeBlock = UnicodeBlock {
-    name: "Miao", start: 93952, end: 94111
+    name: "Miao", start: 0x16F00, end: 0x16F9F
 };
 pub const IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION: UnicodeBlock =
     UnicodeBlock {
-        name: "Ideographic Symbols and Punctuation", start: 94176, end: 94207
+        name: "Ideographic Symbols and Punctuation", start: 0x16FE0, end: 0x16FFF
     };
 pub const TANGUT: UnicodeBlock = UnicodeBlock {
-    name: "Tangut", start: 94208, end: 100351
+    name: "Tangut", start: 0x17000, end: 0x187FF
 };
 pub const TANGUT_COMPONENTS: UnicodeBlock =
     UnicodeBlock {
-        name: "Tangut Components", start: 100352, end: 101119
+        name: "Tangut Components", start: 0x18800, end: 0x18AFF
     };
 pub const KHITAN_SMALL_SCRIPT: UnicodeBlock =
     UnicodeBlock {
-        name: "Khitan Small Script", start: 101120, end: 101631
+        name: "Khitan Small Script", start: 0x18B00, end: 0x18CFF
     };
 pub const TANGUT_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Tangut Supplement", start: 101632, end: 101759
+        name: "Tangut Supplement", start: 0x18D00, end: 0x18D7F
     };
 pub const KANA_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Kana Extended-B", start: 110576, end: 110591
+        name: "Kana Extended-B", start: 0x1AFF0, end: 0x1AFFF
     };
 pub const KANA_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Kana Supplement", start: 110592, end: 110847
+        name: "Kana Supplement", start: 0x1B000, end: 0x1B0FF
     };
 pub const KANA_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Kana Extended-A", start: 110848, end: 110895
+        name: "Kana Extended-A", start: 0x1B100, end: 0x1B12F
     };
 pub const SMALL_KANA_EXTENSION: UnicodeBlock =
     UnicodeBlock {
-        name: "Small Kana Extension", start: 110896, end: 110959
+        name: "Small Kana Extension", start: 0x1B130, end: 0x1B16F
     };
 pub const NUSHU: UnicodeBlock = UnicodeBlock {
-    name: "Nushu", start: 110960, end: 111359
+    name: "Nushu", start: 0x1B170, end: 0x1B2FF
 };
-pub const DUPLOYAN: UnicodeBlock = UnicodeBlock {
-    name: "Duployan", start: 113664, end: 113823
-};
+pub const DUPLOYAN: UnicodeBlock =
+    UnicodeBlock {
+        name: "Duployan", start: 0x1BC00, end: 0x1BC9F
+    };
 pub const SHORTHAND_FORMAT_CONTROLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Shorthand Format Controls", start: 113824, end: 113839
+        name: "Shorthand Format Controls", start: 0x1BCA0, end: 0x1BCAF
     };
+pub const SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT: UnicodeBlock = UnicodeBlock {
+    name:  "Symbols for Legacy Computing Supplement",
+    start: 0x1CC00,
+    end:   0x1CEBF,
+};
 pub const ZNAMENNY_MUSICAL_NOTATION: UnicodeBlock =
     UnicodeBlock {
-        name: "Znamenny Musical Notation", start: 118528, end: 118735
+        name: "Znamenny Musical Notation", start: 0x1CF00, end: 0x1CFCF
     };
 pub const BYZANTINE_MUSICAL_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Byzantine Musical Symbols", start: 118784, end: 119039
+        name: "Byzantine Musical Symbols", start: 0x1D000, end: 0x1D0FF
     };
 pub const MUSICAL_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Musical Symbols", start: 119040, end: 119295
+        name: "Musical Symbols", start: 0x1D100, end: 0x1D1FF
     };
 pub const ANCIENT_GREEK_MUSICAL_NOTATION: UnicodeBlock =
     UnicodeBlock {
-        name: "Ancient Greek Musical Notation", start: 119296, end: 119375
+        name: "Ancient Greek Musical Notation", start: 0x1D200, end: 0x1D24F
     };
 pub const KAKTOVIK_NUMERALS: UnicodeBlock =
     UnicodeBlock {
-        name: "Kaktovik Numerals", start: 119488, end: 119519
+        name: "Kaktovik Numerals", start: 0x1D2C0, end: 0x1D2DF
     };
 pub const MAYAN_NUMERALS: UnicodeBlock =
     UnicodeBlock {
-        name: "Mayan Numerals", start: 119520, end: 119551
+        name: "Mayan Numerals", start: 0x1D2E0, end: 0x1D2FF
     };
 pub const TAI_XUAN_JING_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Tai Xuan Jing Symbols", start: 119552, end: 119647
+        name: "Tai Xuan Jing Symbols", start: 0x1D300, end: 0x1D35F
     };
 pub const COUNTING_ROD_NUMERALS: UnicodeBlock =
     UnicodeBlock {
-        name: "Counting Rod Numerals", start: 119648, end: 119679
+        name: "Counting Rod Numerals", start: 0x1D360, end: 0x1D37F
     };
 pub const MATHEMATICAL_ALPHANUMERIC_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Mathematical Alphanumeric Symbols", start: 119808, end: 120831
+        name: "Mathematical Alphanumeric Symbols", start: 0x1D400, end: 0x1D7FF
     };
 pub const SUTTON_SIGNWRITING: UnicodeBlock =
     UnicodeBlock {
-        name: "Sutton SignWriting", start: 120832, end: 121519
+        name: "Sutton SignWriting", start: 0x1D800, end: 0x1DAAF
     };
 pub const LATIN_EXTENDED_G: UnicodeBlock =
     UnicodeBlock {
-        name: "Latin Extended-G", start: 122624, end: 122879
+        name: "Latin Extended-G", start: 0x1DF00, end: 0x1DFFF
     };
 pub const GLAGOLITIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Glagolitic Supplement", start: 122880, end: 122927
+        name: "Glagolitic Supplement", start: 0x1E000, end: 0x1E02F
     };
 pub const CYRILLIC_EXTENDED_D: UnicodeBlock =
     UnicodeBlock {
-        name: "Cyrillic Extended-D", start: 122928, end: 123023
+        name: "Cyrillic Extended-D", start: 0x1E030, end: 0x1E08F
     };
 pub const NYIAKENG_PUACHUE_HMONG: UnicodeBlock =
     UnicodeBlock {
-        name: "Nyiakeng Puachue Hmong", start: 123136, end: 123215
+        name: "Nyiakeng Puachue Hmong", start: 0x1E100, end: 0x1E14F
     };
 pub const TOTO: UnicodeBlock = UnicodeBlock {
-    name: "Toto", start: 123536, end: 123583
+    name: "Toto", start: 0x1E290, end: 0x1E2BF
 };
 pub const WANCHO: UnicodeBlock = UnicodeBlock {
-    name: "Wancho", start: 123584, end: 123647
+    name: "Wancho", start: 0x1E2C0, end: 0x1E2FF
 };
 pub const NAG_MUNDARI: UnicodeBlock =
     UnicodeBlock {
-        name: "Nag Mundari", start: 124112, end: 124159
+        name: "Nag Mundari", start: 0x1E4D0, end: 0x1E4FF
     };
+pub const OL_ONAL: UnicodeBlock = UnicodeBlock {
+    name: "Ol Onal", start: 0x1E5D0, end: 0x1E5FF
+};
 pub const ETHIOPIC_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Ethiopic Extended-B", start: 124896, end: 124927
+        name: "Ethiopic Extended-B", start: 0x1E7E0, end: 0x1E7FF
     };
 pub const MENDE_KIKAKUI: UnicodeBlock =
     UnicodeBlock {
-        name: "Mende Kikakui", start: 124928, end: 125151
+        name: "Mende Kikakui", start: 0x1E800, end: 0x1E8DF
     };
 pub const ADLAM: UnicodeBlock = UnicodeBlock {
-    name: "Adlam", start: 125184, end: 125279
+    name: "Adlam", start: 0x1E900, end: 0x1E95F
 };
 pub const INDIC_SIYAQ_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Indic Siyaq Numbers", start: 126064, end: 126143
+        name: "Indic Siyaq Numbers", start: 0x1EC70, end: 0x1ECBF
     };
 pub const OTTOMAN_SIYAQ_NUMBERS: UnicodeBlock =
     UnicodeBlock {
-        name: "Ottoman Siyaq Numbers", start: 126208, end: 126287
+        name: "Ottoman Siyaq Numbers", start: 0x1ED00, end: 0x1ED4F
     };
-pub const ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS: UnicodeBlock =
-    UnicodeBlock {
-        name: "Arabic Mathematical Alphabetic Symbols", start: 126464, end: 126719
-    };
+pub const ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS: UnicodeBlock = UnicodeBlock {
+    name:  "Arabic Mathematical Alphabetic Symbols",
+    start: 0x1EE00,
+    end:   0x1EEFF,
+};
 pub const MAHJONG_TILES: UnicodeBlock =
     UnicodeBlock {
-        name: "Mahjong Tiles", start: 126976, end: 127023
+        name: "Mahjong Tiles", start: 0x1F000, end: 0x1F02F
     };
 pub const DOMINO_TILES: UnicodeBlock =
     UnicodeBlock {
-        name: "Domino Tiles", start: 127024, end: 127135
+        name: "Domino Tiles", start: 0x1F030, end: 0x1F09F
     };
 pub const PLAYING_CARDS: UnicodeBlock =
     UnicodeBlock {
-        name: "Playing Cards", start: 127136, end: 127231
+        name: "Playing Cards", start: 0x1F0A0, end: 0x1F0FF
     };
 pub const ENCLOSED_ALPHANUMERIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Enclosed Alphanumeric Supplement", start: 127232, end: 127487
+        name: "Enclosed Alphanumeric Supplement", start: 0x1F100, end: 0x1F1FF
     };
 pub const ENCLOSED_IDEOGRAPHIC_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Enclosed Ideographic Supplement", start: 127488, end: 127743
+        name: "Enclosed Ideographic Supplement", start: 0x1F200, end: 0x1F2FF
     };
 pub const MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Miscellaneous Symbols and Pictographs", start: 127744, end: 128511
+        name: "Miscellaneous Symbols and Pictographs", start: 0x1F300, end: 0x1F5FF
     };
 pub const EMOTICONS: UnicodeBlock =
     UnicodeBlock {
-        name: "Emoticons", start: 128512, end: 128591
+        name: "Emoticons", start: 0x1F600, end: 0x1F64F
     };
 pub const ORNAMENTAL_DINGBATS: UnicodeBlock =
     UnicodeBlock {
-        name: "Ornamental Dingbats", start: 128592, end: 128639
+        name: "Ornamental Dingbats", start: 0x1F650, end: 0x1F67F
     };
 pub const TRANSPORT_AND_MAP_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Transport and Map Symbols", start: 128640, end: 128767
+        name: "Transport and Map Symbols", start: 0x1F680, end: 0x1F6FF
     };
 pub const ALCHEMICAL_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Alchemical Symbols", start: 128768, end: 128895
+        name: "Alchemical Symbols", start: 0x1F700, end: 0x1F77F
     };
 pub const GEOMETRIC_SHAPES_EXTENDED: UnicodeBlock =
     UnicodeBlock {
-        name: "Geometric Shapes Extended", start: 128896, end: 129023
+        name: "Geometric Shapes Extended", start: 0x1F780, end: 0x1F7FF
     };
 pub const SUPPLEMENTAL_ARROWS_C: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Arrows-C", start: 129024, end: 129279
+        name: "Supplemental Arrows-C", start: 0x1F800, end: 0x1F8FF
     };
 pub const SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplemental Symbols and Pictographs", start: 129280, end: 129535
+        name: "Supplemental Symbols and Pictographs", start: 0x1F900, end: 0x1F9FF
     };
 pub const CHESS_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
-        name: "Chess Symbols", start: 129536, end: 129647
+        name: "Chess Symbols", start: 0x1FA00, end: 0x1FA6F
     };
 pub const SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Symbols and Pictographs Extended-A", start: 129648, end: 129791
+        name: "Symbols and Pictographs Extended-A", start: 0x1FA70, end: 0x1FAFF
     };
 pub const SYMBOLS_FOR_LEGACY_COMPUTING: UnicodeBlock =
     UnicodeBlock {
-        name: "Symbols for Legacy Computing", start: 129792, end: 130047
+        name: "Symbols for Legacy Computing", start: 0x1FB00, end: 0x1FBFF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension B", start: 131072, end: 173791
+        name: "CJK Unified Ideographs Extension B", start: 0x20000, end: 0x2A6DF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension C", start: 173824, end: 177983
+        name: "CJK Unified Ideographs Extension C", start: 0x2A700, end: 0x2B73F
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension D", start: 177984, end: 178207
+        name: "CJK Unified Ideographs Extension D", start: 0x2B740, end: 0x2B81F
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension E", start: 178208, end: 183983
+        name: "CJK Unified Ideographs Extension E", start: 0x2B820, end: 0x2CEAF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension F", start: 183984, end: 191471
+        name: "CJK Unified Ideographs Extension F", start: 0x2CEB0, end: 0x2EBEF
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension I", start: 191472, end: 192095
+        name: "CJK Unified Ideographs Extension I", start: 0x2EBF0, end: 0x2EE5F
     };
-pub const CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT: UnicodeBlock =
-    UnicodeBlock {
-        name: "CJK Compatibility Ideographs Supplement", start: 194560, end: 195103
-    };
+pub const CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT: UnicodeBlock = UnicodeBlock {
+    name:  "CJK Compatibility Ideographs Supplement",
+    start: 0x2F800,
+    end:   0x2FA1F,
+};
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension G", start: 196608, end: 201551
+        name: "CJK Unified Ideographs Extension G", start: 0x30000, end: 0x3134F
     };
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H: UnicodeBlock =
     UnicodeBlock {
-        name: "CJK Unified Ideographs Extension H", start: 201552, end: 205743
+        name: "CJK Unified Ideographs Extension H", start: 0x31350, end: 0x323AF
     };
 pub const TAGS: UnicodeBlock = UnicodeBlock {
-    name: "Tags", start: 917504, end: 917631
+    name: "Tags", start: 0xE0000, end: 0xE007F
 };
 pub const VARIATION_SELECTORS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
-        name: "Variation Selectors Supplement", start: 917760, end: 917999
+        name: "Variation Selectors Supplement", start: 0xE0100, end: 0xE01EF
     };
 pub const SUPPLEMENTARY_PRIVATE_USE_AREA_A: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplementary Private Use Area-A", start: 983040, end: 1048575
+        name: "Supplementary Private Use Area-A", start: 0xF0000, end: 0xFFFFF
     };
 pub const SUPPLEMENTARY_PRIVATE_USE_AREA_B: UnicodeBlock =
     UnicodeBlock {
-        name: "Supplementary Private Use Area-B", start: 1048576, end: 1114111
+        name: "Supplementary Private Use Area-B", start: 0x100000, end: 0x10FFFF
     };
 
 /// Given a character, determine what unicode block contains it.
 pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
     match c {
-        '\u{000000}'..='\u{00007F}' => Some(BASIC_LATIN),
-        '\u{000080}'..='\u{0000FF}' => Some(LATIN_1_SUPPLEMENT),
-        '\u{000100}'..='\u{00017F}' => Some(LATIN_EXTENDED_A),
-        '\u{000180}'..='\u{00024F}' => Some(LATIN_EXTENDED_B),
-        '\u{000250}'..='\u{0002AF}' => Some(IPA_EXTENSIONS),
-        '\u{0002B0}'..='\u{0002FF}' => Some(SPACING_MODIFIER_LETTERS),
-        '\u{000300}'..='\u{00036F}' => Some(COMBINING_DIACRITICAL_MARKS),
-        '\u{000370}'..='\u{0003FF}' => Some(GREEK_AND_COPTIC),
-        '\u{000400}'..='\u{0004FF}' => Some(CYRILLIC),
-        '\u{000500}'..='\u{00052F}' => Some(CYRILLIC_SUPPLEMENT),
-        '\u{000530}'..='\u{00058F}' => Some(ARMENIAN),
-        '\u{000590}'..='\u{0005FF}' => Some(HEBREW),
-        '\u{000600}'..='\u{0006FF}' => Some(ARABIC),
-        '\u{000700}'..='\u{00074F}' => Some(SYRIAC),
-        '\u{000750}'..='\u{00077F}' => Some(ARABIC_SUPPLEMENT),
-        '\u{000780}'..='\u{0007BF}' => Some(THAANA),
-        '\u{0007C0}'..='\u{0007FF}' => Some(NKO),
-        '\u{000800}'..='\u{00083F}' => Some(SAMARITAN),
-        '\u{000840}'..='\u{00085F}' => Some(MANDAIC),
-        '\u{000860}'..='\u{00086F}' => Some(SYRIAC_SUPPLEMENT),
-        '\u{000870}'..='\u{00089F}' => Some(ARABIC_EXTENDED_B),
-        '\u{0008A0}'..='\u{0008FF}' => Some(ARABIC_EXTENDED_A),
-        '\u{000900}'..='\u{00097F}' => Some(DEVANAGARI),
-        '\u{000980}'..='\u{0009FF}' => Some(BENGALI),
-        '\u{000A00}'..='\u{000A7F}' => Some(GURMUKHI),
-        '\u{000A80}'..='\u{000AFF}' => Some(GUJARATI),
-        '\u{000B00}'..='\u{000B7F}' => Some(ORIYA),
-        '\u{000B80}'..='\u{000BFF}' => Some(TAMIL),
-        '\u{000C00}'..='\u{000C7F}' => Some(TELUGU),
-        '\u{000C80}'..='\u{000CFF}' => Some(KANNADA),
-        '\u{000D00}'..='\u{000D7F}' => Some(MALAYALAM),
-        '\u{000D80}'..='\u{000DFF}' => Some(SINHALA),
-        '\u{000E00}'..='\u{000E7F}' => Some(THAI),
-        '\u{000E80}'..='\u{000EFF}' => Some(LAO),
-        '\u{000F00}'..='\u{000FFF}' => Some(TIBETAN),
-        '\u{001000}'..='\u{00109F}' => Some(MYANMAR),
-        '\u{0010A0}'..='\u{0010FF}' => Some(GEORGIAN),
-        '\u{001100}'..='\u{0011FF}' => Some(HANGUL_JAMO),
-        '\u{001200}'..='\u{00137F}' => Some(ETHIOPIC),
-        '\u{001380}'..='\u{00139F}' => Some(ETHIOPIC_SUPPLEMENT),
-        '\u{0013A0}'..='\u{0013FF}' => Some(CHEROKEE),
-        '\u{001400}'..='\u{00167F}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS),
-        '\u{001680}'..='\u{00169F}' => Some(OGHAM),
-        '\u{0016A0}'..='\u{0016FF}' => Some(RUNIC),
-        '\u{001700}'..='\u{00171F}' => Some(TAGALOG),
-        '\u{001720}'..='\u{00173F}' => Some(HANUNOO),
-        '\u{001740}'..='\u{00175F}' => Some(BUHID),
-        '\u{001760}'..='\u{00177F}' => Some(TAGBANWA),
-        '\u{001780}'..='\u{0017FF}' => Some(KHMER),
-        '\u{001800}'..='\u{0018AF}' => Some(MONGOLIAN),
-        '\u{0018B0}'..='\u{0018FF}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED),
-        '\u{001900}'..='\u{00194F}' => Some(LIMBU),
-        '\u{001950}'..='\u{00197F}' => Some(TAI_LE),
-        '\u{001980}'..='\u{0019DF}' => Some(NEW_TAI_LUE),
-        '\u{0019E0}'..='\u{0019FF}' => Some(KHMER_SYMBOLS),
-        '\u{001A00}'..='\u{001A1F}' => Some(BUGINESE),
-        '\u{001A20}'..='\u{001AAF}' => Some(TAI_THAM),
-        '\u{001AB0}'..='\u{001AFF}' => Some(COMBINING_DIACRITICAL_MARKS_EXTENDED),
-        '\u{001B00}'..='\u{001B7F}' => Some(BALINESE),
-        '\u{001B80}'..='\u{001BBF}' => Some(SUNDANESE),
-        '\u{001BC0}'..='\u{001BFF}' => Some(BATAK),
-        '\u{001C00}'..='\u{001C4F}' => Some(LEPCHA),
-        '\u{001C50}'..='\u{001C7F}' => Some(OL_CHIKI),
-        '\u{001C80}'..='\u{001C8F}' => Some(CYRILLIC_EXTENDED_C),
-        '\u{001C90}'..='\u{001CBF}' => Some(GEORGIAN_EXTENDED),
-        '\u{001CC0}'..='\u{001CCF}' => Some(SUNDANESE_SUPPLEMENT),
-        '\u{001CD0}'..='\u{001CFF}' => Some(VEDIC_EXTENSIONS),
-        '\u{001D00}'..='\u{001D7F}' => Some(PHONETIC_EXTENSIONS),
-        '\u{001D80}'..='\u{001DBF}' => Some(PHONETIC_EXTENSIONS_SUPPLEMENT),
-        '\u{001DC0}'..='\u{001DFF}' => Some(COMBINING_DIACRITICAL_MARKS_SUPPLEMENT),
-        '\u{001E00}'..='\u{001EFF}' => Some(LATIN_EXTENDED_ADDITIONAL),
-        '\u{001F00}'..='\u{001FFF}' => Some(GREEK_EXTENDED),
-        '\u{002000}'..='\u{00206F}' => Some(GENERAL_PUNCTUATION),
-        '\u{002070}'..='\u{00209F}' => Some(SUPERSCRIPTS_AND_SUBSCRIPTS),
-        '\u{0020A0}'..='\u{0020CF}' => Some(CURRENCY_SYMBOLS),
-        '\u{0020D0}'..='\u{0020FF}' => Some(COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS),
-        '\u{002100}'..='\u{00214F}' => Some(LETTERLIKE_SYMBOLS),
-        '\u{002150}'..='\u{00218F}' => Some(NUMBER_FORMS),
-        '\u{002190}'..='\u{0021FF}' => Some(ARROWS),
-        '\u{002200}'..='\u{0022FF}' => Some(MATHEMATICAL_OPERATORS),
-        '\u{002300}'..='\u{0023FF}' => Some(MISCELLANEOUS_TECHNICAL),
-        '\u{002400}'..='\u{00243F}' => Some(CONTROL_PICTURES),
-        '\u{002440}'..='\u{00245F}' => Some(OPTICAL_CHARACTER_RECOGNITION),
-        '\u{002460}'..='\u{0024FF}' => Some(ENCLOSED_ALPHANUMERICS),
-        '\u{002500}'..='\u{00257F}' => Some(BOX_DRAWING),
-        '\u{002580}'..='\u{00259F}' => Some(BLOCK_ELEMENTS),
-        '\u{0025A0}'..='\u{0025FF}' => Some(GEOMETRIC_SHAPES),
-        '\u{002600}'..='\u{0026FF}' => Some(MISCELLANEOUS_SYMBOLS),
-        '\u{002700}'..='\u{0027BF}' => Some(DINGBATS),
-        '\u{0027C0}'..='\u{0027EF}' => Some(MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A),
-        '\u{0027F0}'..='\u{0027FF}' => Some(SUPPLEMENTAL_ARROWS_A),
-        '\u{002800}'..='\u{0028FF}' => Some(BRAILLE_PATTERNS),
-        '\u{002900}'..='\u{00297F}' => Some(SUPPLEMENTAL_ARROWS_B),
-        '\u{002980}'..='\u{0029FF}' => Some(MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B),
-        '\u{002A00}'..='\u{002AFF}' => Some(SUPPLEMENTAL_MATHEMATICAL_OPERATORS),
-        '\u{002B00}'..='\u{002BFF}' => Some(MISCELLANEOUS_SYMBOLS_AND_ARROWS),
-        '\u{002C00}'..='\u{002C5F}' => Some(GLAGOLITIC),
-        '\u{002C60}'..='\u{002C7F}' => Some(LATIN_EXTENDED_C),
-        '\u{002C80}'..='\u{002CFF}' => Some(COPTIC),
-        '\u{002D00}'..='\u{002D2F}' => Some(GEORGIAN_SUPPLEMENT),
-        '\u{002D30}'..='\u{002D7F}' => Some(TIFINAGH),
-        '\u{002D80}'..='\u{002DDF}' => Some(ETHIOPIC_EXTENDED),
-        '\u{002DE0}'..='\u{002DFF}' => Some(CYRILLIC_EXTENDED_A),
-        '\u{002E00}'..='\u{002E7F}' => Some(SUPPLEMENTAL_PUNCTUATION),
-        '\u{002E80}'..='\u{002EFF}' => Some(CJK_RADICALS_SUPPLEMENT),
-        '\u{002F00}'..='\u{002FDF}' => Some(KANGXI_RADICALS),
-        '\u{002FF0}'..='\u{002FFF}' => Some(IDEOGRAPHIC_DESCRIPTION_CHARACTERS),
-        '\u{003000}'..='\u{00303F}' => Some(CJK_SYMBOLS_AND_PUNCTUATION),
-        '\u{003040}'..='\u{00309F}' => Some(HIRAGANA),
-        '\u{0030A0}'..='\u{0030FF}' => Some(KATAKANA),
-        '\u{003100}'..='\u{00312F}' => Some(BOPOMOFO),
-        '\u{003130}'..='\u{00318F}' => Some(HANGUL_COMPATIBILITY_JAMO),
-        '\u{003190}'..='\u{00319F}' => Some(KANBUN),
-        '\u{0031A0}'..='\u{0031BF}' => Some(BOPOMOFO_EXTENDED),
-        '\u{0031C0}'..='\u{0031EF}' => Some(CJK_STROKES),
-        '\u{0031F0}'..='\u{0031FF}' => Some(KATAKANA_PHONETIC_EXTENSIONS),
-        '\u{003200}'..='\u{0032FF}' => Some(ENCLOSED_CJK_LETTERS_AND_MONTHS),
-        '\u{003300}'..='\u{0033FF}' => Some(CJK_COMPATIBILITY),
-        '\u{003400}'..='\u{004DBF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A),
-        '\u{004DC0}'..='\u{004DFF}' => Some(YIJING_HEXAGRAM_SYMBOLS),
-        '\u{004E00}'..='\u{009FFF}' => Some(CJK_UNIFIED_IDEOGRAPHS),
-        '\u{00A000}'..='\u{00A48F}' => Some(YI_SYLLABLES),
-        '\u{00A490}'..='\u{00A4CF}' => Some(YI_RADICALS),
-        '\u{00A4D0}'..='\u{00A4FF}' => Some(LISU),
-        '\u{00A500}'..='\u{00A63F}' => Some(VAI),
-        '\u{00A640}'..='\u{00A69F}' => Some(CYRILLIC_EXTENDED_B),
-        '\u{00A6A0}'..='\u{00A6FF}' => Some(BAMUM),
-        '\u{00A700}'..='\u{00A71F}' => Some(MODIFIER_TONE_LETTERS),
-        '\u{00A720}'..='\u{00A7FF}' => Some(LATIN_EXTENDED_D),
-        '\u{00A800}'..='\u{00A82F}' => Some(SYLOTI_NAGRI),
-        '\u{00A830}'..='\u{00A83F}' => Some(COMMON_INDIC_NUMBER_FORMS),
-        '\u{00A840}'..='\u{00A87F}' => Some(PHAGS_PA),
-        '\u{00A880}'..='\u{00A8DF}' => Some(SAURASHTRA),
-        '\u{00A8E0}'..='\u{00A8FF}' => Some(DEVANAGARI_EXTENDED),
-        '\u{00A900}'..='\u{00A92F}' => Some(KAYAH_LI),
-        '\u{00A930}'..='\u{00A95F}' => Some(REJANG),
-        '\u{00A960}'..='\u{00A97F}' => Some(HANGUL_JAMO_EXTENDED_A),
-        '\u{00A980}'..='\u{00A9DF}' => Some(JAVANESE),
-        '\u{00A9E0}'..='\u{00A9FF}' => Some(MYANMAR_EXTENDED_B),
-        '\u{00AA00}'..='\u{00AA5F}' => Some(CHAM),
-        '\u{00AA60}'..='\u{00AA7F}' => Some(MYANMAR_EXTENDED_A),
-        '\u{00AA80}'..='\u{00AADF}' => Some(TAI_VIET),
-        '\u{00AAE0}'..='\u{00AAFF}' => Some(MEETEI_MAYEK_EXTENSIONS),
-        '\u{00AB00}'..='\u{00AB2F}' => Some(ETHIOPIC_EXTENDED_A),
-        '\u{00AB30}'..='\u{00AB6F}' => Some(LATIN_EXTENDED_E),
-        '\u{00AB70}'..='\u{00ABBF}' => Some(CHEROKEE_SUPPLEMENT),
-        '\u{00ABC0}'..='\u{00ABFF}' => Some(MEETEI_MAYEK),
-        '\u{00AC00}'..='\u{00D7AF}' => Some(HANGUL_SYLLABLES),
-        '\u{00D7B0}'..='\u{00D7FF}' => Some(HANGUL_JAMO_EXTENDED_B),
-        '\u{00E000}'..='\u{00F8FF}' => Some(PRIVATE_USE_AREA),
-        '\u{00F900}'..='\u{00FAFF}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS),
-        '\u{00FB00}'..='\u{00FB4F}' => Some(ALPHABETIC_PRESENTATION_FORMS),
-        '\u{00FB50}'..='\u{00FDFF}' => Some(ARABIC_PRESENTATION_FORMS_A),
-        '\u{00FE00}'..='\u{00FE0F}' => Some(VARIATION_SELECTORS),
-        '\u{00FE10}'..='\u{00FE1F}' => Some(VERTICAL_FORMS),
-        '\u{00FE20}'..='\u{00FE2F}' => Some(COMBINING_HALF_MARKS),
-        '\u{00FE30}'..='\u{00FE4F}' => Some(CJK_COMPATIBILITY_FORMS),
-        '\u{00FE50}'..='\u{00FE6F}' => Some(SMALL_FORM_VARIANTS),
-        '\u{00FE70}'..='\u{00FEFF}' => Some(ARABIC_PRESENTATION_FORMS_B),
-        '\u{00FF00}'..='\u{00FFEF}' => Some(HALFWIDTH_AND_FULLWIDTH_FORMS),
-        '\u{00FFF0}'..='\u{00FFFF}' => Some(SPECIALS),
-        '\u{010000}'..='\u{01007F}' => Some(LINEAR_B_SYLLABARY),
-        '\u{010080}'..='\u{0100FF}' => Some(LINEAR_B_IDEOGRAMS),
-        '\u{010100}'..='\u{01013F}' => Some(AEGEAN_NUMBERS),
-        '\u{010140}'..='\u{01018F}' => Some(ANCIENT_GREEK_NUMBERS),
-        '\u{010190}'..='\u{0101CF}' => Some(ANCIENT_SYMBOLS),
-        '\u{0101D0}'..='\u{0101FF}' => Some(PHAISTOS_DISC),
-        '\u{010280}'..='\u{01029F}' => Some(LYCIAN),
-        '\u{0102A0}'..='\u{0102DF}' => Some(CARIAN),
-        '\u{0102E0}'..='\u{0102FF}' => Some(COPTIC_EPACT_NUMBERS),
-        '\u{010300}'..='\u{01032F}' => Some(OLD_ITALIC),
-        '\u{010330}'..='\u{01034F}' => Some(GOTHIC),
-        '\u{010350}'..='\u{01037F}' => Some(OLD_PERMIC),
-        '\u{010380}'..='\u{01039F}' => Some(UGARITIC),
-        '\u{0103A0}'..='\u{0103DF}' => Some(OLD_PERSIAN),
-        '\u{010400}'..='\u{01044F}' => Some(DESERET),
-        '\u{010450}'..='\u{01047F}' => Some(SHAVIAN),
-        '\u{010480}'..='\u{0104AF}' => Some(OSMANYA),
-        '\u{0104B0}'..='\u{0104FF}' => Some(OSAGE),
-        '\u{010500}'..='\u{01052F}' => Some(ELBASAN),
-        '\u{010530}'..='\u{01056F}' => Some(CAUCASIAN_ALBANIAN),
-        '\u{010570}'..='\u{0105BF}' => Some(VITHKUQI),
-        '\u{010600}'..='\u{01077F}' => Some(LINEAR_A),
-        '\u{010780}'..='\u{0107BF}' => Some(LATIN_EXTENDED_F),
-        '\u{010800}'..='\u{01083F}' => Some(CYPRIOT_SYLLABARY),
-        '\u{010840}'..='\u{01085F}' => Some(IMPERIAL_ARAMAIC),
-        '\u{010860}'..='\u{01087F}' => Some(PALMYRENE),
-        '\u{010880}'..='\u{0108AF}' => Some(NABATAEAN),
-        '\u{0108E0}'..='\u{0108FF}' => Some(HATRAN),
-        '\u{010900}'..='\u{01091F}' => Some(PHOENICIAN),
-        '\u{010920}'..='\u{01093F}' => Some(LYDIAN),
-        '\u{010980}'..='\u{01099F}' => Some(MEROITIC_HIEROGLYPHS),
-        '\u{0109A0}'..='\u{0109FF}' => Some(MEROITIC_CURSIVE),
-        '\u{010A00}'..='\u{010A5F}' => Some(KHAROSHTHI),
-        '\u{010A60}'..='\u{010A7F}' => Some(OLD_SOUTH_ARABIAN),
-        '\u{010A80}'..='\u{010A9F}' => Some(OLD_NORTH_ARABIAN),
-        '\u{010AC0}'..='\u{010AFF}' => Some(MANICHAEAN),
-        '\u{010B00}'..='\u{010B3F}' => Some(AVESTAN),
-        '\u{010B40}'..='\u{010B5F}' => Some(INSCRIPTIONAL_PARTHIAN),
-        '\u{010B60}'..='\u{010B7F}' => Some(INSCRIPTIONAL_PAHLAVI),
-        '\u{010B80}'..='\u{010BAF}' => Some(PSALTER_PAHLAVI),
-        '\u{010C00}'..='\u{010C4F}' => Some(OLD_TURKIC),
-        '\u{010C80}'..='\u{010CFF}' => Some(OLD_HUNGARIAN),
-        '\u{010D00}'..='\u{010D3F}' => Some(HANIFI_ROHINGYA),
-        '\u{010E60}'..='\u{010E7F}' => Some(RUMI_NUMERAL_SYMBOLS),
-        '\u{010E80}'..='\u{010EBF}' => Some(YEZIDI),
-        '\u{010EC0}'..='\u{010EFF}' => Some(ARABIC_EXTENDED_C),
-        '\u{010F00}'..='\u{010F2F}' => Some(OLD_SOGDIAN),
-        '\u{010F30}'..='\u{010F6F}' => Some(SOGDIAN),
-        '\u{010F70}'..='\u{010FAF}' => Some(OLD_UYGHUR),
-        '\u{010FB0}'..='\u{010FDF}' => Some(CHORASMIAN),
-        '\u{010FE0}'..='\u{010FFF}' => Some(ELYMAIC),
-        '\u{011000}'..='\u{01107F}' => Some(BRAHMI),
-        '\u{011080}'..='\u{0110CF}' => Some(KAITHI),
-        '\u{0110D0}'..='\u{0110FF}' => Some(SORA_SOMPENG),
-        '\u{011100}'..='\u{01114F}' => Some(CHAKMA),
-        '\u{011150}'..='\u{01117F}' => Some(MAHAJANI),
-        '\u{011180}'..='\u{0111DF}' => Some(SHARADA),
-        '\u{0111E0}'..='\u{0111FF}' => Some(SINHALA_ARCHAIC_NUMBERS),
-        '\u{011200}'..='\u{01124F}' => Some(KHOJKI),
-        '\u{011280}'..='\u{0112AF}' => Some(MULTANI),
-        '\u{0112B0}'..='\u{0112FF}' => Some(KHUDAWADI),
-        '\u{011300}'..='\u{01137F}' => Some(GRANTHA),
-        '\u{011400}'..='\u{01147F}' => Some(NEWA),
-        '\u{011480}'..='\u{0114DF}' => Some(TIRHUTA),
-        '\u{011580}'..='\u{0115FF}' => Some(SIDDHAM),
-        '\u{011600}'..='\u{01165F}' => Some(MODI),
-        '\u{011660}'..='\u{01167F}' => Some(MONGOLIAN_SUPPLEMENT),
-        '\u{011680}'..='\u{0116CF}' => Some(TAKRI),
-        '\u{011700}'..='\u{01174F}' => Some(AHOM),
-        '\u{011800}'..='\u{01184F}' => Some(DOGRA),
-        '\u{0118A0}'..='\u{0118FF}' => Some(WARANG_CITI),
-        '\u{011900}'..='\u{01195F}' => Some(DIVES_AKURU),
-        '\u{0119A0}'..='\u{0119FF}' => Some(NANDINAGARI),
-        '\u{011A00}'..='\u{011A4F}' => Some(ZANABAZAR_SQUARE),
-        '\u{011A50}'..='\u{011AAF}' => Some(SOYOMBO),
-        '\u{011AB0}'..='\u{011ABF}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A),
-        '\u{011AC0}'..='\u{011AFF}' => Some(PAU_CIN_HAU),
-        '\u{011B00}'..='\u{011B5F}' => Some(DEVANAGARI_EXTENDED_A),
-        '\u{011C00}'..='\u{011C6F}' => Some(BHAIKSUKI),
-        '\u{011C70}'..='\u{011CBF}' => Some(MARCHEN),
-        '\u{011D00}'..='\u{011D5F}' => Some(MASARAM_GONDI),
-        '\u{011D60}'..='\u{011DAF}' => Some(GUNJALA_GONDI),
-        '\u{011EE0}'..='\u{011EFF}' => Some(MAKASAR),
-        '\u{011F00}'..='\u{011F5F}' => Some(KAWI),
-        '\u{011FB0}'..='\u{011FBF}' => Some(LISU_SUPPLEMENT),
-        '\u{011FC0}'..='\u{011FFF}' => Some(TAMIL_SUPPLEMENT),
-        '\u{012000}'..='\u{0123FF}' => Some(CUNEIFORM),
-        '\u{012400}'..='\u{01247F}' => Some(CUNEIFORM_NUMBERS_AND_PUNCTUATION),
-        '\u{012480}'..='\u{01254F}' => Some(EARLY_DYNASTIC_CUNEIFORM),
-        '\u{012F90}'..='\u{012FFF}' => Some(CYPRO_MINOAN),
-        '\u{013000}'..='\u{01342F}' => Some(EGYPTIAN_HIEROGLYPHS),
-        '\u{013430}'..='\u{01345F}' => Some(EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS),
-        '\u{014400}'..='\u{01467F}' => Some(ANATOLIAN_HIEROGLYPHS),
-        '\u{016800}'..='\u{016A3F}' => Some(BAMUM_SUPPLEMENT),
-        '\u{016A40}'..='\u{016A6F}' => Some(MRO),
-        '\u{016A70}'..='\u{016ACF}' => Some(TANGSA),
-        '\u{016AD0}'..='\u{016AFF}' => Some(BASSA_VAH),
-        '\u{016B00}'..='\u{016B8F}' => Some(PAHAWH_HMONG),
-        '\u{016E40}'..='\u{016E9F}' => Some(MEDEFAIDRIN),
-        '\u{016F00}'..='\u{016F9F}' => Some(MIAO),
-        '\u{016FE0}'..='\u{016FFF}' => Some(IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION),
-        '\u{017000}'..='\u{0187FF}' => Some(TANGUT),
-        '\u{018800}'..='\u{018AFF}' => Some(TANGUT_COMPONENTS),
-        '\u{018B00}'..='\u{018CFF}' => Some(KHITAN_SMALL_SCRIPT),
-        '\u{018D00}'..='\u{018D7F}' => Some(TANGUT_SUPPLEMENT),
-        '\u{01AFF0}'..='\u{01AFFF}' => Some(KANA_EXTENDED_B),
-        '\u{01B000}'..='\u{01B0FF}' => Some(KANA_SUPPLEMENT),
-        '\u{01B100}'..='\u{01B12F}' => Some(KANA_EXTENDED_A),
-        '\u{01B130}'..='\u{01B16F}' => Some(SMALL_KANA_EXTENSION),
-        '\u{01B170}'..='\u{01B2FF}' => Some(NUSHU),
-        '\u{01BC00}'..='\u{01BC9F}' => Some(DUPLOYAN),
-        '\u{01BCA0}'..='\u{01BCAF}' => Some(SHORTHAND_FORMAT_CONTROLS),
-        '\u{01CF00}'..='\u{01CFCF}' => Some(ZNAMENNY_MUSICAL_NOTATION),
-        '\u{01D000}'..='\u{01D0FF}' => Some(BYZANTINE_MUSICAL_SYMBOLS),
-        '\u{01D100}'..='\u{01D1FF}' => Some(MUSICAL_SYMBOLS),
-        '\u{01D200}'..='\u{01D24F}' => Some(ANCIENT_GREEK_MUSICAL_NOTATION),
-        '\u{01D2C0}'..='\u{01D2DF}' => Some(KAKTOVIK_NUMERALS),
-        '\u{01D2E0}'..='\u{01D2FF}' => Some(MAYAN_NUMERALS),
-        '\u{01D300}'..='\u{01D35F}' => Some(TAI_XUAN_JING_SYMBOLS),
-        '\u{01D360}'..='\u{01D37F}' => Some(COUNTING_ROD_NUMERALS),
-        '\u{01D400}'..='\u{01D7FF}' => Some(MATHEMATICAL_ALPHANUMERIC_SYMBOLS),
-        '\u{01D800}'..='\u{01DAAF}' => Some(SUTTON_SIGNWRITING),
-        '\u{01DF00}'..='\u{01DFFF}' => Some(LATIN_EXTENDED_G),
-        '\u{01E000}'..='\u{01E02F}' => Some(GLAGOLITIC_SUPPLEMENT),
-        '\u{01E030}'..='\u{01E08F}' => Some(CYRILLIC_EXTENDED_D),
-        '\u{01E100}'..='\u{01E14F}' => Some(NYIAKENG_PUACHUE_HMONG),
-        '\u{01E290}'..='\u{01E2BF}' => Some(TOTO),
-        '\u{01E2C0}'..='\u{01E2FF}' => Some(WANCHO),
-        '\u{01E4D0}'..='\u{01E4FF}' => Some(NAG_MUNDARI),
-        '\u{01E7E0}'..='\u{01E7FF}' => Some(ETHIOPIC_EXTENDED_B),
-        '\u{01E800}'..='\u{01E8DF}' => Some(MENDE_KIKAKUI),
-        '\u{01E900}'..='\u{01E95F}' => Some(ADLAM),
-        '\u{01EC70}'..='\u{01ECBF}' => Some(INDIC_SIYAQ_NUMBERS),
-        '\u{01ED00}'..='\u{01ED4F}' => Some(OTTOMAN_SIYAQ_NUMBERS),
-        '\u{01EE00}'..='\u{01EEFF}' => Some(ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS),
-        '\u{01F000}'..='\u{01F02F}' => Some(MAHJONG_TILES),
-        '\u{01F030}'..='\u{01F09F}' => Some(DOMINO_TILES),
-        '\u{01F0A0}'..='\u{01F0FF}' => Some(PLAYING_CARDS),
-        '\u{01F100}'..='\u{01F1FF}' => Some(ENCLOSED_ALPHANUMERIC_SUPPLEMENT),
-        '\u{01F200}'..='\u{01F2FF}' => Some(ENCLOSED_IDEOGRAPHIC_SUPPLEMENT),
-        '\u{01F300}'..='\u{01F5FF}' => Some(MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS),
-        '\u{01F600}'..='\u{01F64F}' => Some(EMOTICONS),
-        '\u{01F650}'..='\u{01F67F}' => Some(ORNAMENTAL_DINGBATS),
-        '\u{01F680}'..='\u{01F6FF}' => Some(TRANSPORT_AND_MAP_SYMBOLS),
-        '\u{01F700}'..='\u{01F77F}' => Some(ALCHEMICAL_SYMBOLS),
-        '\u{01F780}'..='\u{01F7FF}' => Some(GEOMETRIC_SHAPES_EXTENDED),
-        '\u{01F800}'..='\u{01F8FF}' => Some(SUPPLEMENTAL_ARROWS_C),
-        '\u{01F900}'..='\u{01F9FF}' => Some(SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS),
-        '\u{01FA00}'..='\u{01FA6F}' => Some(CHESS_SYMBOLS),
-        '\u{01FA70}'..='\u{01FAFF}' => Some(SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A),
-        '\u{01FB00}'..='\u{01FBFF}' => Some(SYMBOLS_FOR_LEGACY_COMPUTING),
-        '\u{020000}'..='\u{02A6DF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B),
-        '\u{02A700}'..='\u{02B73F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C),
-        '\u{02B740}'..='\u{02B81F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D),
-        '\u{02B820}'..='\u{02CEAF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E),
-        '\u{02CEB0}'..='\u{02EBEF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F),
-        '\u{02EBF0}'..='\u{02EE5F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I),
-        '\u{02F800}'..='\u{02FA1F}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT),
-        '\u{030000}'..='\u{03134F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G),
-        '\u{031350}'..='\u{0323AF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H),
-        '\u{0E0000}'..='\u{0E007F}' => Some(TAGS),
-        '\u{0E0100}'..='\u{0E01EF}' => Some(VARIATION_SELECTORS_SUPPLEMENT),
-        '\u{0F0000}'..='\u{0FFFFF}' => Some(SUPPLEMENTARY_PRIVATE_USE_AREA_A),
+        '\u{0000}'..='\u{007F}' => Some(BASIC_LATIN),
+        '\u{0080}'..='\u{00FF}' => Some(LATIN_1_SUPPLEMENT),
+        '\u{0100}'..='\u{017F}' => Some(LATIN_EXTENDED_A),
+        '\u{0180}'..='\u{024F}' => Some(LATIN_EXTENDED_B),
+        '\u{0250}'..='\u{02AF}' => Some(IPA_EXTENSIONS),
+        '\u{02B0}'..='\u{02FF}' => Some(SPACING_MODIFIER_LETTERS),
+        '\u{0300}'..='\u{036F}' => Some(COMBINING_DIACRITICAL_MARKS),
+        '\u{0370}'..='\u{03FF}' => Some(GREEK_AND_COPTIC),
+        '\u{0400}'..='\u{04FF}' => Some(CYRILLIC),
+        '\u{0500}'..='\u{052F}' => Some(CYRILLIC_SUPPLEMENT),
+        '\u{0530}'..='\u{058F}' => Some(ARMENIAN),
+        '\u{0590}'..='\u{05FF}' => Some(HEBREW),
+        '\u{0600}'..='\u{06FF}' => Some(ARABIC),
+        '\u{0700}'..='\u{074F}' => Some(SYRIAC),
+        '\u{0750}'..='\u{077F}' => Some(ARABIC_SUPPLEMENT),
+        '\u{0780}'..='\u{07BF}' => Some(THAANA),
+        '\u{07C0}'..='\u{07FF}' => Some(NKO),
+        '\u{0800}'..='\u{083F}' => Some(SAMARITAN),
+        '\u{0840}'..='\u{085F}' => Some(MANDAIC),
+        '\u{0860}'..='\u{086F}' => Some(SYRIAC_SUPPLEMENT),
+        '\u{0870}'..='\u{089F}' => Some(ARABIC_EXTENDED_B),
+        '\u{08A0}'..='\u{08FF}' => Some(ARABIC_EXTENDED_A),
+        '\u{0900}'..='\u{097F}' => Some(DEVANAGARI),
+        '\u{0980}'..='\u{09FF}' => Some(BENGALI),
+        '\u{0A00}'..='\u{0A7F}' => Some(GURMUKHI),
+        '\u{0A80}'..='\u{0AFF}' => Some(GUJARATI),
+        '\u{0B00}'..='\u{0B7F}' => Some(ORIYA),
+        '\u{0B80}'..='\u{0BFF}' => Some(TAMIL),
+        '\u{0C00}'..='\u{0C7F}' => Some(TELUGU),
+        '\u{0C80}'..='\u{0CFF}' => Some(KANNADA),
+        '\u{0D00}'..='\u{0D7F}' => Some(MALAYALAM),
+        '\u{0D80}'..='\u{0DFF}' => Some(SINHALA),
+        '\u{0E00}'..='\u{0E7F}' => Some(THAI),
+        '\u{0E80}'..='\u{0EFF}' => Some(LAO),
+        '\u{0F00}'..='\u{0FFF}' => Some(TIBETAN),
+        '\u{1000}'..='\u{109F}' => Some(MYANMAR),
+        '\u{10A0}'..='\u{10FF}' => Some(GEORGIAN),
+        '\u{1100}'..='\u{11FF}' => Some(HANGUL_JAMO),
+        '\u{1200}'..='\u{137F}' => Some(ETHIOPIC),
+        '\u{1380}'..='\u{139F}' => Some(ETHIOPIC_SUPPLEMENT),
+        '\u{13A0}'..='\u{13FF}' => Some(CHEROKEE),
+        '\u{1400}'..='\u{167F}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS),
+        '\u{1680}'..='\u{169F}' => Some(OGHAM),
+        '\u{16A0}'..='\u{16FF}' => Some(RUNIC),
+        '\u{1700}'..='\u{171F}' => Some(TAGALOG),
+        '\u{1720}'..='\u{173F}' => Some(HANUNOO),
+        '\u{1740}'..='\u{175F}' => Some(BUHID),
+        '\u{1760}'..='\u{177F}' => Some(TAGBANWA),
+        '\u{1780}'..='\u{17FF}' => Some(KHMER),
+        '\u{1800}'..='\u{18AF}' => Some(MONGOLIAN),
+        '\u{18B0}'..='\u{18FF}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED),
+        '\u{1900}'..='\u{194F}' => Some(LIMBU),
+        '\u{1950}'..='\u{197F}' => Some(TAI_LE),
+        '\u{1980}'..='\u{19DF}' => Some(NEW_TAI_LUE),
+        '\u{19E0}'..='\u{19FF}' => Some(KHMER_SYMBOLS),
+        '\u{1A00}'..='\u{1A1F}' => Some(BUGINESE),
+        '\u{1A20}'..='\u{1AAF}' => Some(TAI_THAM),
+        '\u{1AB0}'..='\u{1AFF}' => Some(COMBINING_DIACRITICAL_MARKS_EXTENDED),
+        '\u{1B00}'..='\u{1B7F}' => Some(BALINESE),
+        '\u{1B80}'..='\u{1BBF}' => Some(SUNDANESE),
+        '\u{1BC0}'..='\u{1BFF}' => Some(BATAK),
+        '\u{1C00}'..='\u{1C4F}' => Some(LEPCHA),
+        '\u{1C50}'..='\u{1C7F}' => Some(OL_CHIKI),
+        '\u{1C80}'..='\u{1C8F}' => Some(CYRILLIC_EXTENDED_C),
+        '\u{1C90}'..='\u{1CBF}' => Some(GEORGIAN_EXTENDED),
+        '\u{1CC0}'..='\u{1CCF}' => Some(SUNDANESE_SUPPLEMENT),
+        '\u{1CD0}'..='\u{1CFF}' => Some(VEDIC_EXTENSIONS),
+        '\u{1D00}'..='\u{1D7F}' => Some(PHONETIC_EXTENSIONS),
+        '\u{1D80}'..='\u{1DBF}' => Some(PHONETIC_EXTENSIONS_SUPPLEMENT),
+        '\u{1DC0}'..='\u{1DFF}' => Some(COMBINING_DIACRITICAL_MARKS_SUPPLEMENT),
+        '\u{1E00}'..='\u{1EFF}' => Some(LATIN_EXTENDED_ADDITIONAL),
+        '\u{1F00}'..='\u{1FFF}' => Some(GREEK_EXTENDED),
+        '\u{2000}'..='\u{206F}' => Some(GENERAL_PUNCTUATION),
+        '\u{2070}'..='\u{209F}' => Some(SUPERSCRIPTS_AND_SUBSCRIPTS),
+        '\u{20A0}'..='\u{20CF}' => Some(CURRENCY_SYMBOLS),
+        '\u{20D0}'..='\u{20FF}' => Some(COMBINING_DIACRITICAL_MARKS_FOR_SYMBOLS),
+        '\u{2100}'..='\u{214F}' => Some(LETTERLIKE_SYMBOLS),
+        '\u{2150}'..='\u{218F}' => Some(NUMBER_FORMS),
+        '\u{2190}'..='\u{21FF}' => Some(ARROWS),
+        '\u{2200}'..='\u{22FF}' => Some(MATHEMATICAL_OPERATORS),
+        '\u{2300}'..='\u{23FF}' => Some(MISCELLANEOUS_TECHNICAL),
+        '\u{2400}'..='\u{243F}' => Some(CONTROL_PICTURES),
+        '\u{2440}'..='\u{245F}' => Some(OPTICAL_CHARACTER_RECOGNITION),
+        '\u{2460}'..='\u{24FF}' => Some(ENCLOSED_ALPHANUMERICS),
+        '\u{2500}'..='\u{257F}' => Some(BOX_DRAWING),
+        '\u{2580}'..='\u{259F}' => Some(BLOCK_ELEMENTS),
+        '\u{25A0}'..='\u{25FF}' => Some(GEOMETRIC_SHAPES),
+        '\u{2600}'..='\u{26FF}' => Some(MISCELLANEOUS_SYMBOLS),
+        '\u{2700}'..='\u{27BF}' => Some(DINGBATS),
+        '\u{27C0}'..='\u{27EF}' => Some(MISCELLANEOUS_MATHEMATICAL_SYMBOLS_A),
+        '\u{27F0}'..='\u{27FF}' => Some(SUPPLEMENTAL_ARROWS_A),
+        '\u{2800}'..='\u{28FF}' => Some(BRAILLE_PATTERNS),
+        '\u{2900}'..='\u{297F}' => Some(SUPPLEMENTAL_ARROWS_B),
+        '\u{2980}'..='\u{29FF}' => Some(MISCELLANEOUS_MATHEMATICAL_SYMBOLS_B),
+        '\u{2A00}'..='\u{2AFF}' => Some(SUPPLEMENTAL_MATHEMATICAL_OPERATORS),
+        '\u{2B00}'..='\u{2BFF}' => Some(MISCELLANEOUS_SYMBOLS_AND_ARROWS),
+        '\u{2C00}'..='\u{2C5F}' => Some(GLAGOLITIC),
+        '\u{2C60}'..='\u{2C7F}' => Some(LATIN_EXTENDED_C),
+        '\u{2C80}'..='\u{2CFF}' => Some(COPTIC),
+        '\u{2D00}'..='\u{2D2F}' => Some(GEORGIAN_SUPPLEMENT),
+        '\u{2D30}'..='\u{2D7F}' => Some(TIFINAGH),
+        '\u{2D80}'..='\u{2DDF}' => Some(ETHIOPIC_EXTENDED),
+        '\u{2DE0}'..='\u{2DFF}' => Some(CYRILLIC_EXTENDED_A),
+        '\u{2E00}'..='\u{2E7F}' => Some(SUPPLEMENTAL_PUNCTUATION),
+        '\u{2E80}'..='\u{2EFF}' => Some(CJK_RADICALS_SUPPLEMENT),
+        '\u{2F00}'..='\u{2FDF}' => Some(KANGXI_RADICALS),
+        '\u{2FF0}'..='\u{2FFF}' => Some(IDEOGRAPHIC_DESCRIPTION_CHARACTERS),
+        '\u{3000}'..='\u{303F}' => Some(CJK_SYMBOLS_AND_PUNCTUATION),
+        '\u{3040}'..='\u{309F}' => Some(HIRAGANA),
+        '\u{30A0}'..='\u{30FF}' => Some(KATAKANA),
+        '\u{3100}'..='\u{312F}' => Some(BOPOMOFO),
+        '\u{3130}'..='\u{318F}' => Some(HANGUL_COMPATIBILITY_JAMO),
+        '\u{3190}'..='\u{319F}' => Some(KANBUN),
+        '\u{31A0}'..='\u{31BF}' => Some(BOPOMOFO_EXTENDED),
+        '\u{31C0}'..='\u{31EF}' => Some(CJK_STROKES),
+        '\u{31F0}'..='\u{31FF}' => Some(KATAKANA_PHONETIC_EXTENSIONS),
+        '\u{3200}'..='\u{32FF}' => Some(ENCLOSED_CJK_LETTERS_AND_MONTHS),
+        '\u{3300}'..='\u{33FF}' => Some(CJK_COMPATIBILITY),
+        '\u{3400}'..='\u{4DBF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A),
+        '\u{4DC0}'..='\u{4DFF}' => Some(YIJING_HEXAGRAM_SYMBOLS),
+        '\u{4E00}'..='\u{9FFF}' => Some(CJK_UNIFIED_IDEOGRAPHS),
+        '\u{A000}'..='\u{A48F}' => Some(YI_SYLLABLES),
+        '\u{A490}'..='\u{A4CF}' => Some(YI_RADICALS),
+        '\u{A4D0}'..='\u{A4FF}' => Some(LISU),
+        '\u{A500}'..='\u{A63F}' => Some(VAI),
+        '\u{A640}'..='\u{A69F}' => Some(CYRILLIC_EXTENDED_B),
+        '\u{A6A0}'..='\u{A6FF}' => Some(BAMUM),
+        '\u{A700}'..='\u{A71F}' => Some(MODIFIER_TONE_LETTERS),
+        '\u{A720}'..='\u{A7FF}' => Some(LATIN_EXTENDED_D),
+        '\u{A800}'..='\u{A82F}' => Some(SYLOTI_NAGRI),
+        '\u{A830}'..='\u{A83F}' => Some(COMMON_INDIC_NUMBER_FORMS),
+        '\u{A840}'..='\u{A87F}' => Some(PHAGS_PA),
+        '\u{A880}'..='\u{A8DF}' => Some(SAURASHTRA),
+        '\u{A8E0}'..='\u{A8FF}' => Some(DEVANAGARI_EXTENDED),
+        '\u{A900}'..='\u{A92F}' => Some(KAYAH_LI),
+        '\u{A930}'..='\u{A95F}' => Some(REJANG),
+        '\u{A960}'..='\u{A97F}' => Some(HANGUL_JAMO_EXTENDED_A),
+        '\u{A980}'..='\u{A9DF}' => Some(JAVANESE),
+        '\u{A9E0}'..='\u{A9FF}' => Some(MYANMAR_EXTENDED_B),
+        '\u{AA00}'..='\u{AA5F}' => Some(CHAM),
+        '\u{AA60}'..='\u{AA7F}' => Some(MYANMAR_EXTENDED_A),
+        '\u{AA80}'..='\u{AADF}' => Some(TAI_VIET),
+        '\u{AAE0}'..='\u{AAFF}' => Some(MEETEI_MAYEK_EXTENSIONS),
+        '\u{AB00}'..='\u{AB2F}' => Some(ETHIOPIC_EXTENDED_A),
+        '\u{AB30}'..='\u{AB6F}' => Some(LATIN_EXTENDED_E),
+        '\u{AB70}'..='\u{ABBF}' => Some(CHEROKEE_SUPPLEMENT),
+        '\u{ABC0}'..='\u{ABFF}' => Some(MEETEI_MAYEK),
+        '\u{AC00}'..='\u{D7AF}' => Some(HANGUL_SYLLABLES),
+        '\u{D7B0}'..='\u{D7FF}' => Some(HANGUL_JAMO_EXTENDED_B),
+        '\u{E000}'..='\u{F8FF}' => Some(PRIVATE_USE_AREA),
+        '\u{F900}'..='\u{FAFF}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS),
+        '\u{FB00}'..='\u{FB4F}' => Some(ALPHABETIC_PRESENTATION_FORMS),
+        '\u{FB50}'..='\u{FDFF}' => Some(ARABIC_PRESENTATION_FORMS_A),
+        '\u{FE00}'..='\u{FE0F}' => Some(VARIATION_SELECTORS),
+        '\u{FE10}'..='\u{FE1F}' => Some(VERTICAL_FORMS),
+        '\u{FE20}'..='\u{FE2F}' => Some(COMBINING_HALF_MARKS),
+        '\u{FE30}'..='\u{FE4F}' => Some(CJK_COMPATIBILITY_FORMS),
+        '\u{FE50}'..='\u{FE6F}' => Some(SMALL_FORM_VARIANTS),
+        '\u{FE70}'..='\u{FEFF}' => Some(ARABIC_PRESENTATION_FORMS_B),
+        '\u{FF00}'..='\u{FFEF}' => Some(HALFWIDTH_AND_FULLWIDTH_FORMS),
+        '\u{FFF0}'..='\u{FFFF}' => Some(SPECIALS),
+        '\u{10000}'..='\u{1007F}' => Some(LINEAR_B_SYLLABARY),
+        '\u{10080}'..='\u{100FF}' => Some(LINEAR_B_IDEOGRAMS),
+        '\u{10100}'..='\u{1013F}' => Some(AEGEAN_NUMBERS),
+        '\u{10140}'..='\u{1018F}' => Some(ANCIENT_GREEK_NUMBERS),
+        '\u{10190}'..='\u{101CF}' => Some(ANCIENT_SYMBOLS),
+        '\u{101D0}'..='\u{101FF}' => Some(PHAISTOS_DISC),
+        '\u{10280}'..='\u{1029F}' => Some(LYCIAN),
+        '\u{102A0}'..='\u{102DF}' => Some(CARIAN),
+        '\u{102E0}'..='\u{102FF}' => Some(COPTIC_EPACT_NUMBERS),
+        '\u{10300}'..='\u{1032F}' => Some(OLD_ITALIC),
+        '\u{10330}'..='\u{1034F}' => Some(GOTHIC),
+        '\u{10350}'..='\u{1037F}' => Some(OLD_PERMIC),
+        '\u{10380}'..='\u{1039F}' => Some(UGARITIC),
+        '\u{103A0}'..='\u{103DF}' => Some(OLD_PERSIAN),
+        '\u{10400}'..='\u{1044F}' => Some(DESERET),
+        '\u{10450}'..='\u{1047F}' => Some(SHAVIAN),
+        '\u{10480}'..='\u{104AF}' => Some(OSMANYA),
+        '\u{104B0}'..='\u{104FF}' => Some(OSAGE),
+        '\u{10500}'..='\u{1052F}' => Some(ELBASAN),
+        '\u{10530}'..='\u{1056F}' => Some(CAUCASIAN_ALBANIAN),
+        '\u{10570}'..='\u{105BF}' => Some(VITHKUQI),
+        '\u{105C0}'..='\u{105FF}' => Some(TODHRI),
+        '\u{10600}'..='\u{1077F}' => Some(LINEAR_A),
+        '\u{10780}'..='\u{107BF}' => Some(LATIN_EXTENDED_F),
+        '\u{10800}'..='\u{1083F}' => Some(CYPRIOT_SYLLABARY),
+        '\u{10840}'..='\u{1085F}' => Some(IMPERIAL_ARAMAIC),
+        '\u{10860}'..='\u{1087F}' => Some(PALMYRENE),
+        '\u{10880}'..='\u{108AF}' => Some(NABATAEAN),
+        '\u{108E0}'..='\u{108FF}' => Some(HATRAN),
+        '\u{10900}'..='\u{1091F}' => Some(PHOENICIAN),
+        '\u{10920}'..='\u{1093F}' => Some(LYDIAN),
+        '\u{10980}'..='\u{1099F}' => Some(MEROITIC_HIEROGLYPHS),
+        '\u{109A0}'..='\u{109FF}' => Some(MEROITIC_CURSIVE),
+        '\u{10A00}'..='\u{10A5F}' => Some(KHAROSHTHI),
+        '\u{10A60}'..='\u{10A7F}' => Some(OLD_SOUTH_ARABIAN),
+        '\u{10A80}'..='\u{10A9F}' => Some(OLD_NORTH_ARABIAN),
+        '\u{10AC0}'..='\u{10AFF}' => Some(MANICHAEAN),
+        '\u{10B00}'..='\u{10B3F}' => Some(AVESTAN),
+        '\u{10B40}'..='\u{10B5F}' => Some(INSCRIPTIONAL_PARTHIAN),
+        '\u{10B60}'..='\u{10B7F}' => Some(INSCRIPTIONAL_PAHLAVI),
+        '\u{10B80}'..='\u{10BAF}' => Some(PSALTER_PAHLAVI),
+        '\u{10C00}'..='\u{10C4F}' => Some(OLD_TURKIC),
+        '\u{10C80}'..='\u{10CFF}' => Some(OLD_HUNGARIAN),
+        '\u{10D00}'..='\u{10D3F}' => Some(HANIFI_ROHINGYA),
+        '\u{10D40}'..='\u{10D8F}' => Some(GARAY),
+        '\u{10E60}'..='\u{10E7F}' => Some(RUMI_NUMERAL_SYMBOLS),
+        '\u{10E80}'..='\u{10EBF}' => Some(YEZIDI),
+        '\u{10EC0}'..='\u{10EFF}' => Some(ARABIC_EXTENDED_C),
+        '\u{10F00}'..='\u{10F2F}' => Some(OLD_SOGDIAN),
+        '\u{10F30}'..='\u{10F6F}' => Some(SOGDIAN),
+        '\u{10F70}'..='\u{10FAF}' => Some(OLD_UYGHUR),
+        '\u{10FB0}'..='\u{10FDF}' => Some(CHORASMIAN),
+        '\u{10FE0}'..='\u{10FFF}' => Some(ELYMAIC),
+        '\u{11000}'..='\u{1107F}' => Some(BRAHMI),
+        '\u{11080}'..='\u{110CF}' => Some(KAITHI),
+        '\u{110D0}'..='\u{110FF}' => Some(SORA_SOMPENG),
+        '\u{11100}'..='\u{1114F}' => Some(CHAKMA),
+        '\u{11150}'..='\u{1117F}' => Some(MAHAJANI),
+        '\u{11180}'..='\u{111DF}' => Some(SHARADA),
+        '\u{111E0}'..='\u{111FF}' => Some(SINHALA_ARCHAIC_NUMBERS),
+        '\u{11200}'..='\u{1124F}' => Some(KHOJKI),
+        '\u{11280}'..='\u{112AF}' => Some(MULTANI),
+        '\u{112B0}'..='\u{112FF}' => Some(KHUDAWADI),
+        '\u{11300}'..='\u{1137F}' => Some(GRANTHA),
+        '\u{11380}'..='\u{113FF}' => Some(TULU_TIGALARI),
+        '\u{11400}'..='\u{1147F}' => Some(NEWA),
+        '\u{11480}'..='\u{114DF}' => Some(TIRHUTA),
+        '\u{11580}'..='\u{115FF}' => Some(SIDDHAM),
+        '\u{11600}'..='\u{1165F}' => Some(MODI),
+        '\u{11660}'..='\u{1167F}' => Some(MONGOLIAN_SUPPLEMENT),
+        '\u{11680}'..='\u{116CF}' => Some(TAKRI),
+        '\u{116D0}'..='\u{116FF}' => Some(MYANMAR_EXTENDED_C),
+        '\u{11700}'..='\u{1174F}' => Some(AHOM),
+        '\u{11800}'..='\u{1184F}' => Some(DOGRA),
+        '\u{118A0}'..='\u{118FF}' => Some(WARANG_CITI),
+        '\u{11900}'..='\u{1195F}' => Some(DIVES_AKURU),
+        '\u{119A0}'..='\u{119FF}' => Some(NANDINAGARI),
+        '\u{11A00}'..='\u{11A4F}' => Some(ZANABAZAR_SQUARE),
+        '\u{11A50}'..='\u{11AAF}' => Some(SOYOMBO),
+        '\u{11AB0}'..='\u{11ABF}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A),
+        '\u{11AC0}'..='\u{11AFF}' => Some(PAU_CIN_HAU),
+        '\u{11B00}'..='\u{11B5F}' => Some(DEVANAGARI_EXTENDED_A),
+        '\u{11BC0}'..='\u{11BFF}' => Some(SUNUWAR),
+        '\u{11C00}'..='\u{11C6F}' => Some(BHAIKSUKI),
+        '\u{11C70}'..='\u{11CBF}' => Some(MARCHEN),
+        '\u{11D00}'..='\u{11D5F}' => Some(MASARAM_GONDI),
+        '\u{11D60}'..='\u{11DAF}' => Some(GUNJALA_GONDI),
+        '\u{11EE0}'..='\u{11EFF}' => Some(MAKASAR),
+        '\u{11F00}'..='\u{11F5F}' => Some(KAWI),
+        '\u{11FB0}'..='\u{11FBF}' => Some(LISU_SUPPLEMENT),
+        '\u{11FC0}'..='\u{11FFF}' => Some(TAMIL_SUPPLEMENT),
+        '\u{12000}'..='\u{123FF}' => Some(CUNEIFORM),
+        '\u{12400}'..='\u{1247F}' => Some(CUNEIFORM_NUMBERS_AND_PUNCTUATION),
+        '\u{12480}'..='\u{1254F}' => Some(EARLY_DYNASTIC_CUNEIFORM),
+        '\u{12F90}'..='\u{12FFF}' => Some(CYPRO_MINOAN),
+        '\u{13000}'..='\u{1342F}' => Some(EGYPTIAN_HIEROGLYPHS),
+        '\u{13430}'..='\u{1345F}' => Some(EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS),
+        '\u{13460}'..='\u{143FF}' => Some(EGYPTIAN_HIEROGLYPHS_EXTENDED_A),
+        '\u{14400}'..='\u{1467F}' => Some(ANATOLIAN_HIEROGLYPHS),
+        '\u{16100}'..='\u{1613F}' => Some(GURUNG_KHEMA),
+        '\u{16800}'..='\u{16A3F}' => Some(BAMUM_SUPPLEMENT),
+        '\u{16A40}'..='\u{16A6F}' => Some(MRO),
+        '\u{16A70}'..='\u{16ACF}' => Some(TANGSA),
+        '\u{16AD0}'..='\u{16AFF}' => Some(BASSA_VAH),
+        '\u{16B00}'..='\u{16B8F}' => Some(PAHAWH_HMONG),
+        '\u{16D40}'..='\u{16D7F}' => Some(KIRAT_RAI),
+        '\u{16E40}'..='\u{16E9F}' => Some(MEDEFAIDRIN),
+        '\u{16F00}'..='\u{16F9F}' => Some(MIAO),
+        '\u{16FE0}'..='\u{16FFF}' => Some(IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION),
+        '\u{17000}'..='\u{187FF}' => Some(TANGUT),
+        '\u{18800}'..='\u{18AFF}' => Some(TANGUT_COMPONENTS),
+        '\u{18B00}'..='\u{18CFF}' => Some(KHITAN_SMALL_SCRIPT),
+        '\u{18D00}'..='\u{18D7F}' => Some(TANGUT_SUPPLEMENT),
+        '\u{1AFF0}'..='\u{1AFFF}' => Some(KANA_EXTENDED_B),
+        '\u{1B000}'..='\u{1B0FF}' => Some(KANA_SUPPLEMENT),
+        '\u{1B100}'..='\u{1B12F}' => Some(KANA_EXTENDED_A),
+        '\u{1B130}'..='\u{1B16F}' => Some(SMALL_KANA_EXTENSION),
+        '\u{1B170}'..='\u{1B2FF}' => Some(NUSHU),
+        '\u{1BC00}'..='\u{1BC9F}' => Some(DUPLOYAN),
+        '\u{1BCA0}'..='\u{1BCAF}' => Some(SHORTHAND_FORMAT_CONTROLS),
+        '\u{1CC00}'..='\u{1CEBF}' => Some(SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT),
+        '\u{1CF00}'..='\u{1CFCF}' => Some(ZNAMENNY_MUSICAL_NOTATION),
+        '\u{1D000}'..='\u{1D0FF}' => Some(BYZANTINE_MUSICAL_SYMBOLS),
+        '\u{1D100}'..='\u{1D1FF}' => Some(MUSICAL_SYMBOLS),
+        '\u{1D200}'..='\u{1D24F}' => Some(ANCIENT_GREEK_MUSICAL_NOTATION),
+        '\u{1D2C0}'..='\u{1D2DF}' => Some(KAKTOVIK_NUMERALS),
+        '\u{1D2E0}'..='\u{1D2FF}' => Some(MAYAN_NUMERALS),
+        '\u{1D300}'..='\u{1D35F}' => Some(TAI_XUAN_JING_SYMBOLS),
+        '\u{1D360}'..='\u{1D37F}' => Some(COUNTING_ROD_NUMERALS),
+        '\u{1D400}'..='\u{1D7FF}' => Some(MATHEMATICAL_ALPHANUMERIC_SYMBOLS),
+        '\u{1D800}'..='\u{1DAAF}' => Some(SUTTON_SIGNWRITING),
+        '\u{1DF00}'..='\u{1DFFF}' => Some(LATIN_EXTENDED_G),
+        '\u{1E000}'..='\u{1E02F}' => Some(GLAGOLITIC_SUPPLEMENT),
+        '\u{1E030}'..='\u{1E08F}' => Some(CYRILLIC_EXTENDED_D),
+        '\u{1E100}'..='\u{1E14F}' => Some(NYIAKENG_PUACHUE_HMONG),
+        '\u{1E290}'..='\u{1E2BF}' => Some(TOTO),
+        '\u{1E2C0}'..='\u{1E2FF}' => Some(WANCHO),
+        '\u{1E4D0}'..='\u{1E4FF}' => Some(NAG_MUNDARI),
+        '\u{1E5D0}'..='\u{1E5FF}' => Some(OL_ONAL),
+        '\u{1E7E0}'..='\u{1E7FF}' => Some(ETHIOPIC_EXTENDED_B),
+        '\u{1E800}'..='\u{1E8DF}' => Some(MENDE_KIKAKUI),
+        '\u{1E900}'..='\u{1E95F}' => Some(ADLAM),
+        '\u{1EC70}'..='\u{1ECBF}' => Some(INDIC_SIYAQ_NUMBERS),
+        '\u{1ED00}'..='\u{1ED4F}' => Some(OTTOMAN_SIYAQ_NUMBERS),
+        '\u{1EE00}'..='\u{1EEFF}' => Some(ARABIC_MATHEMATICAL_ALPHABETIC_SYMBOLS),
+        '\u{1F000}'..='\u{1F02F}' => Some(MAHJONG_TILES),
+        '\u{1F030}'..='\u{1F09F}' => Some(DOMINO_TILES),
+        '\u{1F0A0}'..='\u{1F0FF}' => Some(PLAYING_CARDS),
+        '\u{1F100}'..='\u{1F1FF}' => Some(ENCLOSED_ALPHANUMERIC_SUPPLEMENT),
+        '\u{1F200}'..='\u{1F2FF}' => Some(ENCLOSED_IDEOGRAPHIC_SUPPLEMENT),
+        '\u{1F300}'..='\u{1F5FF}' => Some(MISCELLANEOUS_SYMBOLS_AND_PICTOGRAPHS),
+        '\u{1F600}'..='\u{1F64F}' => Some(EMOTICONS),
+        '\u{1F650}'..='\u{1F67F}' => Some(ORNAMENTAL_DINGBATS),
+        '\u{1F680}'..='\u{1F6FF}' => Some(TRANSPORT_AND_MAP_SYMBOLS),
+        '\u{1F700}'..='\u{1F77F}' => Some(ALCHEMICAL_SYMBOLS),
+        '\u{1F780}'..='\u{1F7FF}' => Some(GEOMETRIC_SHAPES_EXTENDED),
+        '\u{1F800}'..='\u{1F8FF}' => Some(SUPPLEMENTAL_ARROWS_C),
+        '\u{1F900}'..='\u{1F9FF}' => Some(SUPPLEMENTAL_SYMBOLS_AND_PICTOGRAPHS),
+        '\u{1FA00}'..='\u{1FA6F}' => Some(CHESS_SYMBOLS),
+        '\u{1FA70}'..='\u{1FAFF}' => Some(SYMBOLS_AND_PICTOGRAPHS_EXTENDED_A),
+        '\u{1FB00}'..='\u{1FBFF}' => Some(SYMBOLS_FOR_LEGACY_COMPUTING),
+        '\u{20000}'..='\u{2A6DF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B),
+        '\u{2A700}'..='\u{2B73F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_C),
+        '\u{2B740}'..='\u{2B81F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_D),
+        '\u{2B820}'..='\u{2CEAF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_E),
+        '\u{2CEB0}'..='\u{2EBEF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_F),
+        '\u{2EBF0}'..='\u{2EE5F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_I),
+        '\u{2F800}'..='\u{2FA1F}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT),
+        '\u{30000}'..='\u{3134F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G),
+        '\u{31350}'..='\u{323AF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H),
+        '\u{E0000}'..='\u{E007F}' => Some(TAGS),
+        '\u{E0100}'..='\u{E01EF}' => Some(VARIATION_SELECTORS_SUPPLEMENT),
+        '\u{F0000}'..='\u{FFFFF}' => Some(SUPPLEMENTARY_PRIVATE_USE_AREA_A),
         '\u{100000}'..='\u{10FFFF}' => Some(SUPPLEMENTARY_PRIVATE_USE_AREA_B),
         _ => None,
     }
