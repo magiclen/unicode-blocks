@@ -23,6 +23,7 @@ fn is_cjk() {
     assert!(!unicode_blocks::is_cjk('ß'));
     assert!(unicode_blocks::is_cjk('中'));
     assert!(unicode_blocks::is_cjk('𩸽'));
+    assert!(unicode_blocks::is_cjk('\u{323B0}'));
     assert!(unicode_blocks::is_cjk('。'));
     assert!(unicode_blocks::is_cjk('，'));
     assert!(unicode_blocks::is_cjk('あ'));

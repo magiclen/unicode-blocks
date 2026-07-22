@@ -3,7 +3,7 @@
 
 This crate contains a list of all unicode blocks and provides some functions to search across them.
 
-The latest version of Unicode: 15.1.0
+The latest version of Unicode: 17.0.0
 
 ## Examples
 

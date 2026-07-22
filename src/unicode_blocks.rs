@@ -2,7 +2,7 @@
 
 use crate::UnicodeBlock;
 
-pub const VERSION: &str = "15.1.0";
+pub const VERSION: &str = "17.0.0";
 pub const BASIC_LATIN: UnicodeBlock = UnicodeBlock {
     name: "Basic Latin", start: 0, end: 127
 };
@@ -672,6 +672,9 @@ pub const CAUCASIAN_ALBANIAN: UnicodeBlock =
 pub const VITHKUQI: UnicodeBlock = UnicodeBlock {
     name: "Vithkuqi", start: 66928, end: 67007
 };
+pub const TODHRI: UnicodeBlock = UnicodeBlock {
+    name: "Todhri", start: 67008, end: 67071
+};
 pub const LINEAR_A: UnicodeBlock = UnicodeBlock {
     name: "Linear A", start: 67072, end: 67455
 };
@@ -702,6 +705,9 @@ pub const PHOENICIAN: UnicodeBlock =
     };
 pub const LYDIAN: UnicodeBlock = UnicodeBlock {
     name: "Lydian", start: 67872, end: 67903
+};
+pub const SIDETIC: UnicodeBlock = UnicodeBlock {
+    name: "Sidetic", start: 67904, end: 67935
 };
 pub const MEROITIC_HIEROGLYPHS: UnicodeBlock =
     UnicodeBlock {
@@ -754,6 +760,9 @@ pub const HANIFI_ROHINGYA: UnicodeBlock =
     UnicodeBlock {
         name: "Hanifi Rohingya", start: 68864, end: 68927
     };
+pub const GARAY: UnicodeBlock = UnicodeBlock {
+    name: "Garay", start: 68928, end: 69007
+};
 pub const RUMI_NUMERAL_SYMBOLS: UnicodeBlock =
     UnicodeBlock {
         name: "Rumi Numeral Symbols", start: 69216, end: 69247
@@ -818,6 +827,10 @@ pub const KHUDAWADI: UnicodeBlock = UnicodeBlock {
 pub const GRANTHA: UnicodeBlock = UnicodeBlock {
     name: "Grantha", start: 70400, end: 70527
 };
+pub const TULU_TIGALARI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Tulu-Tigalari", start: 70528, end: 70655
+    };
 pub const NEWA: UnicodeBlock = UnicodeBlock {
     name: "Newa", start: 70656, end: 70783
 };
@@ -837,6 +850,10 @@ pub const MONGOLIAN_SUPPLEMENT: UnicodeBlock =
 pub const TAKRI: UnicodeBlock = UnicodeBlock {
     name: "Takri", start: 71296, end: 71375
 };
+pub const MYANMAR_EXTENDED_C: UnicodeBlock =
+    UnicodeBlock {
+        name: "Myanmar Extended-C", start: 71376, end: 71423
+    };
 pub const AHOM: UnicodeBlock = UnicodeBlock {
     name: "Ahom", start: 71424, end: 71503
 };
@@ -875,6 +892,13 @@ pub const DEVANAGARI_EXTENDED_A: UnicodeBlock =
     UnicodeBlock {
         name: "Devanagari Extended-A", start: 72448, end: 72543
     };
+pub const SHARADA_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Sharada Supplement", start: 72544, end: 72575
+    };
+pub const SUNUWAR: UnicodeBlock = UnicodeBlock {
+    name: "Sunuwar", start: 72640, end: 72703
+};
 pub const BHAIKSUKI: UnicodeBlock = UnicodeBlock {
     name: "Bhaiksuki", start: 72704, end: 72815
 };
@@ -888,6 +912,10 @@ pub const MASARAM_GONDI: UnicodeBlock =
 pub const GUNJALA_GONDI: UnicodeBlock =
     UnicodeBlock {
         name: "Gunjala Gondi", start: 73056, end: 73135
+    };
+pub const TOLONG_SIKI: UnicodeBlock =
+    UnicodeBlock {
+        name: "Tolong Siki", start: 73136, end: 73199
     };
 pub const MAKASAR: UnicodeBlock = UnicodeBlock {
     name: "Makasar", start: 73440, end: 73471
@@ -926,9 +954,17 @@ pub const EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS: UnicodeBlock =
     UnicodeBlock {
         name: "Egyptian Hieroglyph Format Controls", start: 78896, end: 78943
     };
+pub const EGYPTIAN_HIEROGLYPHS_EXTENDED_A: UnicodeBlock =
+    UnicodeBlock {
+        name: "Egyptian Hieroglyphs Extended-A", start: 78944, end: 82943
+    };
 pub const ANATOLIAN_HIEROGLYPHS: UnicodeBlock =
     UnicodeBlock {
         name: "Anatolian Hieroglyphs", start: 82944, end: 83583
+    };
+pub const GURUNG_KHEMA: UnicodeBlock =
+    UnicodeBlock {
+        name: "Gurung Khema", start: 90368, end: 90431
     };
 pub const BAMUM_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
@@ -947,9 +983,16 @@ pub const PAHAWH_HMONG: UnicodeBlock =
     UnicodeBlock {
         name: "Pahawh Hmong", start: 92928, end: 93071
     };
+pub const KIRAT_RAI: UnicodeBlock = UnicodeBlock {
+    name: "Kirat Rai", start: 93504, end: 93567
+};
 pub const MEDEFAIDRIN: UnicodeBlock =
     UnicodeBlock {
         name: "Medefaidrin", start: 93760, end: 93855
+    };
+pub const BERIA_ERFE: UnicodeBlock =
+    UnicodeBlock {
+        name: "Beria Erfe", start: 93856, end: 93919
     };
 pub const MIAO: UnicodeBlock = UnicodeBlock {
     name: "Miao", start: 93952, end: 94111
@@ -972,6 +1015,10 @@ pub const KHITAN_SMALL_SCRIPT: UnicodeBlock =
 pub const TANGUT_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
         name: "Tangut Supplement", start: 101632, end: 101759
+    };
+pub const TANGUT_COMPONENTS_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Tangut Components Supplement", start: 101760, end: 101887
     };
 pub const KANA_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
@@ -998,6 +1045,14 @@ pub const DUPLOYAN: UnicodeBlock = UnicodeBlock {
 pub const SHORTHAND_FORMAT_CONTROLS: UnicodeBlock =
     UnicodeBlock {
         name: "Shorthand Format Controls", start: 113824, end: 113839
+    };
+pub const SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Symbols for Legacy Computing Supplement", start: 117760, end: 118463
+    };
+pub const MISCELLANEOUS_SYMBOLS_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Miscellaneous Symbols Supplement", start: 118464, end: 118527
     };
 pub const ZNAMENNY_MUSICAL_NOTATION: UnicodeBlock =
     UnicodeBlock {
@@ -1065,6 +1120,12 @@ pub const NAG_MUNDARI: UnicodeBlock =
     UnicodeBlock {
         name: "Nag Mundari", start: 124112, end: 124159
     };
+pub const OL_ONAL: UnicodeBlock = UnicodeBlock {
+    name: "Ol Onal", start: 124368, end: 124415
+};
+pub const TAI_YO: UnicodeBlock = UnicodeBlock {
+    name: "Tai Yo", start: 124608, end: 124671
+};
 pub const ETHIOPIC_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
         name: "Ethiopic Extended-B", start: 124896, end: 124927
@@ -1187,6 +1248,10 @@ pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G: UnicodeBlock =
 pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H: UnicodeBlock =
     UnicodeBlock {
         name: "CJK Unified Ideographs Extension H", start: 201552, end: 205743
+    };
+pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J: UnicodeBlock =
+    UnicodeBlock {
+        name: "CJK Unified Ideographs Extension J", start: 205744, end: 210047
     };
 pub const TAGS: UnicodeBlock = UnicodeBlock {
     name: "Tags", start: 917504, end: 917631
@@ -1389,6 +1454,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{010500}'..='\u{01052F}' => Some(ELBASAN),
         '\u{010530}'..='\u{01056F}' => Some(CAUCASIAN_ALBANIAN),
         '\u{010570}'..='\u{0105BF}' => Some(VITHKUQI),
+        '\u{0105C0}'..='\u{0105FF}' => Some(TODHRI),
         '\u{010600}'..='\u{01077F}' => Some(LINEAR_A),
         '\u{010780}'..='\u{0107BF}' => Some(LATIN_EXTENDED_F),
         '\u{010800}'..='\u{01083F}' => Some(CYPRIOT_SYLLABARY),
@@ -1398,6 +1464,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{0108E0}'..='\u{0108FF}' => Some(HATRAN),
         '\u{010900}'..='\u{01091F}' => Some(PHOENICIAN),
         '\u{010920}'..='\u{01093F}' => Some(LYDIAN),
+        '\u{010940}'..='\u{01095F}' => Some(SIDETIC),
         '\u{010980}'..='\u{01099F}' => Some(MEROITIC_HIEROGLYPHS),
         '\u{0109A0}'..='\u{0109FF}' => Some(MEROITIC_CURSIVE),
         '\u{010A00}'..='\u{010A5F}' => Some(KHAROSHTHI),
@@ -1411,6 +1478,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{010C00}'..='\u{010C4F}' => Some(OLD_TURKIC),
         '\u{010C80}'..='\u{010CFF}' => Some(OLD_HUNGARIAN),
         '\u{010D00}'..='\u{010D3F}' => Some(HANIFI_ROHINGYA),
+        '\u{010D40}'..='\u{010D8F}' => Some(GARAY),
         '\u{010E60}'..='\u{010E7F}' => Some(RUMI_NUMERAL_SYMBOLS),
         '\u{010E80}'..='\u{010EBF}' => Some(YEZIDI),
         '\u{010EC0}'..='\u{010EFF}' => Some(ARABIC_EXTENDED_C),
@@ -1430,12 +1498,14 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{011280}'..='\u{0112AF}' => Some(MULTANI),
         '\u{0112B0}'..='\u{0112FF}' => Some(KHUDAWADI),
         '\u{011300}'..='\u{01137F}' => Some(GRANTHA),
+        '\u{011380}'..='\u{0113FF}' => Some(TULU_TIGALARI),
         '\u{011400}'..='\u{01147F}' => Some(NEWA),
         '\u{011480}'..='\u{0114DF}' => Some(TIRHUTA),
         '\u{011580}'..='\u{0115FF}' => Some(SIDDHAM),
         '\u{011600}'..='\u{01165F}' => Some(MODI),
         '\u{011660}'..='\u{01167F}' => Some(MONGOLIAN_SUPPLEMENT),
         '\u{011680}'..='\u{0116CF}' => Some(TAKRI),
+        '\u{0116D0}'..='\u{0116FF}' => Some(MYANMAR_EXTENDED_C),
         '\u{011700}'..='\u{01174F}' => Some(AHOM),
         '\u{011800}'..='\u{01184F}' => Some(DOGRA),
         '\u{0118A0}'..='\u{0118FF}' => Some(WARANG_CITI),
@@ -1446,10 +1516,13 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{011AB0}'..='\u{011ABF}' => Some(UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A),
         '\u{011AC0}'..='\u{011AFF}' => Some(PAU_CIN_HAU),
         '\u{011B00}'..='\u{011B5F}' => Some(DEVANAGARI_EXTENDED_A),
+        '\u{011B60}'..='\u{011B7F}' => Some(SHARADA_SUPPLEMENT),
+        '\u{011BC0}'..='\u{011BFF}' => Some(SUNUWAR),
         '\u{011C00}'..='\u{011C6F}' => Some(BHAIKSUKI),
         '\u{011C70}'..='\u{011CBF}' => Some(MARCHEN),
         '\u{011D00}'..='\u{011D5F}' => Some(MASARAM_GONDI),
         '\u{011D60}'..='\u{011DAF}' => Some(GUNJALA_GONDI),
+        '\u{011DB0}'..='\u{011DEF}' => Some(TOLONG_SIKI),
         '\u{011EE0}'..='\u{011EFF}' => Some(MAKASAR),
         '\u{011F00}'..='\u{011F5F}' => Some(KAWI),
         '\u{011FB0}'..='\u{011FBF}' => Some(LISU_SUPPLEMENT),
@@ -1460,19 +1533,24 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{012F90}'..='\u{012FFF}' => Some(CYPRO_MINOAN),
         '\u{013000}'..='\u{01342F}' => Some(EGYPTIAN_HIEROGLYPHS),
         '\u{013430}'..='\u{01345F}' => Some(EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS),
+        '\u{013460}'..='\u{0143FF}' => Some(EGYPTIAN_HIEROGLYPHS_EXTENDED_A),
         '\u{014400}'..='\u{01467F}' => Some(ANATOLIAN_HIEROGLYPHS),
+        '\u{016100}'..='\u{01613F}' => Some(GURUNG_KHEMA),
         '\u{016800}'..='\u{016A3F}' => Some(BAMUM_SUPPLEMENT),
         '\u{016A40}'..='\u{016A6F}' => Some(MRO),
         '\u{016A70}'..='\u{016ACF}' => Some(TANGSA),
         '\u{016AD0}'..='\u{016AFF}' => Some(BASSA_VAH),
         '\u{016B00}'..='\u{016B8F}' => Some(PAHAWH_HMONG),
+        '\u{016D40}'..='\u{016D7F}' => Some(KIRAT_RAI),
         '\u{016E40}'..='\u{016E9F}' => Some(MEDEFAIDRIN),
+        '\u{016EA0}'..='\u{016EDF}' => Some(BERIA_ERFE),
         '\u{016F00}'..='\u{016F9F}' => Some(MIAO),
         '\u{016FE0}'..='\u{016FFF}' => Some(IDEOGRAPHIC_SYMBOLS_AND_PUNCTUATION),
         '\u{017000}'..='\u{0187FF}' => Some(TANGUT),
         '\u{018800}'..='\u{018AFF}' => Some(TANGUT_COMPONENTS),
         '\u{018B00}'..='\u{018CFF}' => Some(KHITAN_SMALL_SCRIPT),
         '\u{018D00}'..='\u{018D7F}' => Some(TANGUT_SUPPLEMENT),
+        '\u{018D80}'..='\u{018DFF}' => Some(TANGUT_COMPONENTS_SUPPLEMENT),
         '\u{01AFF0}'..='\u{01AFFF}' => Some(KANA_EXTENDED_B),
         '\u{01B000}'..='\u{01B0FF}' => Some(KANA_SUPPLEMENT),
         '\u{01B100}'..='\u{01B12F}' => Some(KANA_EXTENDED_A),
@@ -1480,6 +1558,8 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{01B170}'..='\u{01B2FF}' => Some(NUSHU),
         '\u{01BC00}'..='\u{01BC9F}' => Some(DUPLOYAN),
         '\u{01BCA0}'..='\u{01BCAF}' => Some(SHORTHAND_FORMAT_CONTROLS),
+        '\u{01CC00}'..='\u{01CEBF}' => Some(SYMBOLS_FOR_LEGACY_COMPUTING_SUPPLEMENT),
+        '\u{01CEC0}'..='\u{01CEFF}' => Some(MISCELLANEOUS_SYMBOLS_SUPPLEMENT),
         '\u{01CF00}'..='\u{01CFCF}' => Some(ZNAMENNY_MUSICAL_NOTATION),
         '\u{01D000}'..='\u{01D0FF}' => Some(BYZANTINE_MUSICAL_SYMBOLS),
         '\u{01D100}'..='\u{01D1FF}' => Some(MUSICAL_SYMBOLS),
@@ -1497,6 +1577,8 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{01E290}'..='\u{01E2BF}' => Some(TOTO),
         '\u{01E2C0}'..='\u{01E2FF}' => Some(WANCHO),
         '\u{01E4D0}'..='\u{01E4FF}' => Some(NAG_MUNDARI),
+        '\u{01E5D0}'..='\u{01E5FF}' => Some(OL_ONAL),
+        '\u{01E6C0}'..='\u{01E6FF}' => Some(TAI_YO),
         '\u{01E7E0}'..='\u{01E7FF}' => Some(ETHIOPIC_EXTENDED_B),
         '\u{01E800}'..='\u{01E8DF}' => Some(MENDE_KIKAKUI),
         '\u{01E900}'..='\u{01E95F}' => Some(ADLAM),
@@ -1528,6 +1610,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{02F800}'..='\u{02FA1F}' => Some(CJK_COMPATIBILITY_IDEOGRAPHS_SUPPLEMENT),
         '\u{030000}'..='\u{03134F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G),
         '\u{031350}'..='\u{0323AF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H),
+        '\u{0323B0}'..='\u{03347F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J),
         '\u{0E0000}'..='\u{0E007F}' => Some(TAGS),
         '\u{0E0100}'..='\u{0E01EF}' => Some(VARIATION_SELECTORS_SUPPLEMENT),
         '\u{0F0000}'..='\u{0FFFFF}' => Some(SUPPLEMENTARY_PRIVATE_USE_AREA_A),
