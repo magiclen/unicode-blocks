@@ -33,6 +33,12 @@ fn is_cjk() {
     assert!(unicode_blocks::is_cjk('ん'));
     assert!(unicode_blocks::is_cjk('ン'));
     assert!(unicode_blocks::is_cjk('이'));
+    assert!(unicode_blocks::is_cjk('\u{3D000}'));
+    assert!(unicode_blocks::is_cjk('\u{3FC3F}'));
+    assert!(unicode_blocks::is_cjk('\u{1D300}'));
+    assert!(unicode_blocks::is_cjk('\u{1D35F}'));
+    assert!(unicode_blocks::is_cjk('\u{1B170}'));
+    assert!(unicode_blocks::is_cjk('\u{1B2FF}'));
 }
 
 #[test]
@@ -44,4 +50,7 @@ fn is_cjk_block() {
     assert!(unicode_blocks::is_cjk_block(unicode_blocks::find_unicode_block('中').unwrap()));
     assert!(unicode_blocks::is_cjk_block(unicode_blocks::find_unicode_block('。').unwrap()));
     assert!(unicode_blocks::is_cjk_block(unicode_blocks::find_unicode_block('，').unwrap()));
+    assert!(unicode_blocks::is_cjk_block(unicode_blocks::SEAL));
+    assert!(unicode_blocks::is_cjk_block(unicode_blocks::TAI_XUAN_JING_SYMBOLS));
+    assert!(unicode_blocks::is_cjk_block(unicode_blocks::NUSHU));
 }

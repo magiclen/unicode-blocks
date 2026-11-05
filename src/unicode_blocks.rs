@@ -1,8 +1,9 @@
-// The dataset is from https://www.unicode.org/Public/UNIDATA/Blocks.txt
+// The dataset is from https://www.unicode.org/Public/18.0.0/ucd/Blocks.txt
 
 use crate::UnicodeBlock;
 
-pub const VERSION: &str = "17.0.0";
+/// The Unicode version of the block data in this crate.
+pub const VERSION: &str = "18.0.0";
 pub const BASIC_LATIN: UnicodeBlock = UnicodeBlock {
     name: "Basic Latin", start: 0, end: 127
 };
@@ -917,6 +918,10 @@ pub const TOLONG_SIKI: UnicodeBlock =
     UnicodeBlock {
         name: "Tolong Siki", start: 73136, end: 73199
     };
+pub const BENGALI_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Bengali Supplement", start: 73200, end: 73215
+    };
 pub const MAKASAR: UnicodeBlock = UnicodeBlock {
     name: "Makasar", start: 73440, end: 73471
 };
@@ -941,6 +946,10 @@ pub const CUNEIFORM_NUMBERS_AND_PUNCTUATION: UnicodeBlock =
 pub const EARLY_DYNASTIC_CUNEIFORM: UnicodeBlock =
     UnicodeBlock {
         name: "Early Dynastic Cuneiform", start: 74880, end: 75087
+    };
+pub const ARCHAIC_CUNEIFORM_NUMERALS: UnicodeBlock =
+    UnicodeBlock {
+        name: "Archaic Cuneiform Numerals", start: 75088, end: 75407
     };
 pub const CYPRO_MINOAN: UnicodeBlock =
     UnicodeBlock {
@@ -1020,6 +1029,13 @@ pub const TANGUT_COMPONENTS_SUPPLEMENT: UnicodeBlock =
     UnicodeBlock {
         name: "Tangut Components Supplement", start: 101760, end: 101887
     };
+pub const JURCHEN: UnicodeBlock = UnicodeBlock {
+    name: "Jurchen", start: 101888, end: 102815
+};
+pub const JURCHEN_RADICALS: UnicodeBlock =
+    UnicodeBlock {
+        name: "Jurchen Radicals", start: 102816, end: 102879
+    };
 pub const KANA_EXTENDED_B: UnicodeBlock =
     UnicodeBlock {
         name: "Kana Extended-B", start: 110576, end: 110591
@@ -1070,6 +1086,10 @@ pub const ANCIENT_GREEK_MUSICAL_NOTATION: UnicodeBlock =
     UnicodeBlock {
         name: "Ancient Greek Musical Notation", start: 119296, end: 119375
     };
+pub const MUSICAL_SYMBOLS_SUPPLEMENT: UnicodeBlock =
+    UnicodeBlock {
+        name: "Musical Symbols Supplement", start: 119376, end: 119439
+    };
 pub const KAKTOVIK_NUMERALS: UnicodeBlock =
     UnicodeBlock {
         name: "Kaktovik Numerals", start: 119488, end: 119519
@@ -1094,6 +1114,11 @@ pub const SUTTON_SIGNWRITING: UnicodeBlock =
     UnicodeBlock {
         name: "Sutton SignWriting", start: 120832, end: 121519
     };
+pub const MISCELLANEOUS_SYMBOLS_AND_ARROWS_EXTENDED: UnicodeBlock = UnicodeBlock {
+    name:  "Miscellaneous Symbols and Arrows Extended",
+    start: 121600,
+    end:   121855,
+};
 pub const LATIN_EXTENDED_G: UnicodeBlock =
     UnicodeBlock {
         name: "Latin Extended-G", start: 122624, end: 122879
@@ -1253,6 +1278,9 @@ pub const CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J: UnicodeBlock =
     UnicodeBlock {
         name: "CJK Unified Ideographs Extension J", start: 205744, end: 210047
     };
+pub const SEAL: UnicodeBlock = UnicodeBlock {
+    name: "Seal", start: 249856, end: 261183
+};
 pub const TAGS: UnicodeBlock = UnicodeBlock {
     name: "Tags", start: 917504, end: 917631
 };
@@ -1269,8 +1297,15 @@ pub const SUPPLEMENTARY_PRIVATE_USE_AREA_B: UnicodeBlock =
         name: "Supplementary Private Use Area-B", start: 1048576, end: 1114111
     };
 
-/// Given a character, determine what unicode block contains it.
-pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
+/// Returns the Unicode block that contains the character, or `None` if no block contains it.
+///
+/// ```
+/// const BLOCK: Option<unicode_blocks::UnicodeBlock> =
+///     unicode_blocks::find_unicode_block('A');
+///
+/// assert_eq!(Some(unicode_blocks::BASIC_LATIN), BLOCK);
+/// ```
+pub const fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
     match c {
         '\u{000000}'..='\u{00007F}' => Some(BASIC_LATIN),
         '\u{000080}'..='\u{0000FF}' => Some(LATIN_1_SUPPLEMENT),
@@ -1523,6 +1558,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{011D00}'..='\u{011D5F}' => Some(MASARAM_GONDI),
         '\u{011D60}'..='\u{011DAF}' => Some(GUNJALA_GONDI),
         '\u{011DB0}'..='\u{011DEF}' => Some(TOLONG_SIKI),
+        '\u{011DF0}'..='\u{011DFF}' => Some(BENGALI_SUPPLEMENT),
         '\u{011EE0}'..='\u{011EFF}' => Some(MAKASAR),
         '\u{011F00}'..='\u{011F5F}' => Some(KAWI),
         '\u{011FB0}'..='\u{011FBF}' => Some(LISU_SUPPLEMENT),
@@ -1530,6 +1566,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{012000}'..='\u{0123FF}' => Some(CUNEIFORM),
         '\u{012400}'..='\u{01247F}' => Some(CUNEIFORM_NUMBERS_AND_PUNCTUATION),
         '\u{012480}'..='\u{01254F}' => Some(EARLY_DYNASTIC_CUNEIFORM),
+        '\u{012550}'..='\u{01268F}' => Some(ARCHAIC_CUNEIFORM_NUMERALS),
         '\u{012F90}'..='\u{012FFF}' => Some(CYPRO_MINOAN),
         '\u{013000}'..='\u{01342F}' => Some(EGYPTIAN_HIEROGLYPHS),
         '\u{013430}'..='\u{01345F}' => Some(EGYPTIAN_HIEROGLYPH_FORMAT_CONTROLS),
@@ -1551,6 +1588,8 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{018B00}'..='\u{018CFF}' => Some(KHITAN_SMALL_SCRIPT),
         '\u{018D00}'..='\u{018D7F}' => Some(TANGUT_SUPPLEMENT),
         '\u{018D80}'..='\u{018DFF}' => Some(TANGUT_COMPONENTS_SUPPLEMENT),
+        '\u{018E00}'..='\u{01919F}' => Some(JURCHEN),
+        '\u{0191A0}'..='\u{0191DF}' => Some(JURCHEN_RADICALS),
         '\u{01AFF0}'..='\u{01AFFF}' => Some(KANA_EXTENDED_B),
         '\u{01B000}'..='\u{01B0FF}' => Some(KANA_SUPPLEMENT),
         '\u{01B100}'..='\u{01B12F}' => Some(KANA_EXTENDED_A),
@@ -1564,12 +1603,14 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{01D000}'..='\u{01D0FF}' => Some(BYZANTINE_MUSICAL_SYMBOLS),
         '\u{01D100}'..='\u{01D1FF}' => Some(MUSICAL_SYMBOLS),
         '\u{01D200}'..='\u{01D24F}' => Some(ANCIENT_GREEK_MUSICAL_NOTATION),
+        '\u{01D250}'..='\u{01D28F}' => Some(MUSICAL_SYMBOLS_SUPPLEMENT),
         '\u{01D2C0}'..='\u{01D2DF}' => Some(KAKTOVIK_NUMERALS),
         '\u{01D2E0}'..='\u{01D2FF}' => Some(MAYAN_NUMERALS),
         '\u{01D300}'..='\u{01D35F}' => Some(TAI_XUAN_JING_SYMBOLS),
         '\u{01D360}'..='\u{01D37F}' => Some(COUNTING_ROD_NUMERALS),
         '\u{01D400}'..='\u{01D7FF}' => Some(MATHEMATICAL_ALPHANUMERIC_SYMBOLS),
         '\u{01D800}'..='\u{01DAAF}' => Some(SUTTON_SIGNWRITING),
+        '\u{01DB00}'..='\u{01DBFF}' => Some(MISCELLANEOUS_SYMBOLS_AND_ARROWS_EXTENDED),
         '\u{01DF00}'..='\u{01DFFF}' => Some(LATIN_EXTENDED_G),
         '\u{01E000}'..='\u{01E02F}' => Some(GLAGOLITIC_SUPPLEMENT),
         '\u{01E030}'..='\u{01E08F}' => Some(CYRILLIC_EXTENDED_D),
@@ -1611,6 +1652,7 @@ pub fn find_unicode_block(c: char) -> Option<UnicodeBlock> {
         '\u{030000}'..='\u{03134F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G),
         '\u{031350}'..='\u{0323AF}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_H),
         '\u{0323B0}'..='\u{03347F}' => Some(CJK_UNIFIED_IDEOGRAPHS_EXTENSION_J),
+        '\u{03D000}'..='\u{03FC3F}' => Some(SEAL),
         '\u{0E0000}'..='\u{0E007F}' => Some(TAGS),
         '\u{0E0100}'..='\u{0E01EF}' => Some(VARIATION_SELECTORS_SUPPLEMENT),
         '\u{0F0000}'..='\u{0FFFFF}' => Some(SUPPLEMENTARY_PRIVATE_USE_AREA_A),

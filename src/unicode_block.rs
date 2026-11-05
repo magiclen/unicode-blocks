@@ -28,9 +28,15 @@ impl UnicodeBlock {
 }
 
 impl UnicodeBlock {
-    /// Given a character, determine whether this unicode block contains it.
+    /// Returns whether this Unicode block contains the character.
+    ///
+    /// ```
+    /// const CONTAINS_A: bool = unicode_blocks::BASIC_LATIN.contains('A');
+    ///
+    /// assert!(CONTAINS_A);
+    /// ```
     #[inline]
-    pub fn contains(&self, c: char) -> bool {
+    pub const fn contains(&self, c: char) -> bool {
         let u = c as u32;
 
         u >= self.start && u <= self.end

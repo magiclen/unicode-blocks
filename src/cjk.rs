@@ -1,6 +1,6 @@
 use crate::{unicode_block::UnicodeBlock, unicode_blocks::*};
 
-const CJK_BLOCKS: [UnicodeBlock; 42] = [
+const CJK_BLOCKS: [UnicodeBlock; 45] = [
     CJK_UNIFIED_IDEOGRAPHS,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A,
     CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B,
@@ -43,22 +43,65 @@ const CJK_BLOCKS: [UnicodeBlock; 42] = [
     ENCLOSED_IDEOGRAPHIC_SUPPLEMENT, // 🈲, 🈧
     KANGXI_RADICALS,
     IDEOGRAPHIC_DESCRIPTION_CHARACTERS, // ⿰, ⿸
+    SEAL,
+    TAI_XUAN_JING_SYMBOLS,
+    NUSHU,
+    // COUNTING_ROD_NUMERALS is not included because it also has Western tally marks (U+1D377, U+1D378).
 ];
 
-/// Given a character, determine whether it is used in CJK.
+const CJK_MIN_START: u32 = {
+    let mut min = u32::MAX;
+    let mut i = 0;
+
+    while i < CJK_BLOCKS.len() {
+        if CJK_BLOCKS[i].start < min {
+            min = CJK_BLOCKS[i].start;
+        }
+
+        i += 1;
+    }
+
+    min
+};
+
+/// Returns whether the character belongs to a block in the CJK set.
+///
+/// See [CJK blocks](crate#cjk-blocks) for the scope of this set.
 #[inline]
-pub fn is_cjk(c: char) -> bool {
-    for b in CJK_BLOCKS.iter() {
-        if b.contains(c) {
+pub const fn is_cjk(c: char) -> bool {
+    // Characters below every CJK block, such as ASCII, can skip the scan.
+    if (c as u32) < CJK_MIN_START {
+        return false;
+    }
+
+    let mut i = 0;
+
+    while i < CJK_BLOCKS.len() {
+        if CJK_BLOCKS[i].contains(c) {
             return true;
         }
+
+        i += 1;
     }
 
     false
 }
 
-/// Given a `UnicodeBlock`, determine whether it is used in CJK.
+/// Returns whether the Unicode block is in the CJK set.
+///
+/// See [CJK blocks](crate#cjk-blocks) for the scope of this set.
 #[inline]
-pub fn is_cjk_block(unicode_block: UnicodeBlock) -> bool {
-    CJK_BLOCKS.contains(&unicode_block)
+pub const fn is_cjk_block(unicode_block: UnicodeBlock) -> bool {
+    let mut i = 0;
+
+    while i < CJK_BLOCKS.len() {
+        // `==` on `UnicodeBlock` is not const, so compare `start` the same way `UnicodeBlock::eq` does.
+        if CJK_BLOCKS[i].start == unicode_block.start {
+            return true;
+        }
+
+        i += 1;
+    }
+
+    false
 }
